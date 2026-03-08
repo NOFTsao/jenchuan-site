@@ -43,6 +43,11 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(92%, var(--max-width));
       margin: 0 auto;
@@ -61,27 +66,55 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
       padding: 16px 0;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 900;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       letter-spacing: 0.2px;
       line-height: 1.3;
+      min-width: 0;
     }
 
-    .logo span {
+    .logo-img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .logo-text strong {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 900;
+      word-break: break-word;
+    }
+
+    .logo-text span {
       color: var(--accent);
       display: block;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
+      word-break: break-word;
     }
 
     .nav-links {
       display: flex;
       gap: 24px;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .nav-links a {
@@ -101,6 +134,7 @@
       font-size: 1.6rem;
       cursor: pointer;
       color: var(--primary);
+      flex-shrink: 0;
     }
 
     .btn {
@@ -203,6 +237,7 @@
 
     section {
       padding: 84px 0;
+      scroll-margin-top: 100px;
     }
 
     .section-title {
@@ -432,6 +467,25 @@
       color: var(--primary);
     }
 
+    .business-card-wrap {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .business-card-wrap h4 {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
+    .business-card-image {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
     .form-group {
       margin-bottom: 16px;
     }
@@ -509,7 +563,7 @@
         display: none;
         position: absolute;
         right: 4%;
-        top: 72px;
+        top: 78px;
         background: var(--white);
         border: 1px solid var(--border);
         border-radius: 16px;
@@ -528,6 +582,24 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .logo {
+        gap: 10px;
+        font-size: 0.98rem;
+      }
+
+      .logo-img {
+        width: 46px;
+        height: 46px;
+      }
+
+      .logo-text strong {
+        font-size: 0.95rem;
+      }
+
+      .logo-text span {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -535,10 +607,13 @@
 
   <header>
     <div class="container navbar">
-      <div class="logo">
-        仁川記帳及報稅代理人事務所
-        <span>仁川事業有限公司</span>
-      </div>
+      <a href="#" class="logo">
+        <img src="RCLOGO.png" alt="仁川會計 LOGO" class="logo-img">
+        <div class="logo-text">
+          <strong>仁川記帳及報稅代理人事務所</strong>
+          <span>仁川事業有限公司</span>
+        </div>
+      </a>
 
       <button class="menu-toggle" id="menuToggle">☰</button>
 
@@ -607,7 +682,7 @@
           </p>
         </div>
 
-        <div class="card" id="advantages">
+        <div class="card">
           <h3>我們的專業優勢</h3>
           <ul class="bullet-list">
             <li>深耕二十餘年，具備實務經驗與服務穩定度</li>
@@ -673,7 +748,7 @@
     </div>
   </section>
 
-  <section class="stats">
+  <section class="stats" id="advantages">
     <div class="container">
       <div class="section-title">
         <small>FEATURES</small>
@@ -781,8 +856,13 @@
             <ul class="contact-info">
               <li><strong>江莉莉</strong></li>
               <li><strong>手機：</strong>0919-834441</li>
-              <li><strong>LINE ID：</strong>8333741</li>
+              <li><strong>LINE ID：</strong>8337441</li>
             </ul>
+          </div>
+
+          <div class="business-card-wrap">
+            <h4>名片資訊</h4>
+            <img src="仁川名片完.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
           </div>
         </div>
 
@@ -822,6 +902,7 @@
       <div class="footer-links">
         <a href="#about">事務所介紹</a>
         <a href="#services">服務項目</a>
+        <a href="#advantages">專業優勢</a>
         <a href="#faq">常見問題</a>
         <a href="#contact">聯絡我們</a>
       </div>
