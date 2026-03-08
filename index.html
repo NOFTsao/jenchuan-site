@@ -442,6 +442,33 @@
       padding-bottom: 20px;
     }
 
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .business-card-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .business-card-panel h3 {
+      margin-bottom: 16px;
+      font-size: 1.25rem;
+    }
+
+    .business-card-image {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
     .contact-info {
       list-style: none;
     }
@@ -465,59 +492,6 @@
       margin-bottom: 10px;
       font-size: 1.05rem;
       color: var(--primary);
-    }
-
-    .business-card-wrap {
-      margin-top: 26px;
-      padding-top: 22px;
-      border-top: 1px dashed var(--border);
-    }
-
-    .business-card-wrap h4 {
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-      color: var(--primary);
-    }
-
-    .business-card-image {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 0.96rem;
-      font-family: inherit;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(182, 139, 47, 0.15);
-    }
-
-    .form-group textarea {
-      min-height: 130px;
-      resize: vertical;
     }
 
     footer {
@@ -547,9 +521,9 @@
     @media (max-width: 992px) {
       .hero-grid,
       .about-grid,
-      .contact-grid,
       .services-grid,
-      .stats-grid {
+      .stats-grid,
+      .contact-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -608,7 +582,7 @@
   <header>
     <div class="container navbar">
       <a href="#" class="logo">
-        <img src="RCLOGO.png" alt="仁川會計 LOGO" class="logo-img">
+        <img src="logo.png" alt="仁川會計 LOGO" class="logo-img">
         <div class="logo-text">
           <strong>仁川記帳及報稅代理人事務所</strong>
           <span>仁川事業有限公司</span>
@@ -839,7 +813,12 @@
         </p>
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-layout">
+        <div class="business-card-panel">
+          <h3>名片資訊</h3>
+          <img src="business-card.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
+        </div>
+
         <div class="card">
           <h3>聯絡資訊</h3>
           <ul class="contact-info">
@@ -859,38 +838,6 @@
               <li><strong>LINE ID：</strong>8337441</li>
             </ul>
           </div>
-
-          <div class="business-card-wrap">
-            <h4>名片資訊</h4>
-            <img src="仁川名片完.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>線上詢問</h3>
-          <form>
-            <div class="form-group">
-              <label for="name">姓名</label>
-              <input id="name" name="name" type="text" placeholder="請輸入您的姓名">
-            </div>
-
-            <div class="form-group">
-              <label for="phone">電話</label>
-              <input id="phone" name="phone" type="text" placeholder="請輸入您的電話">
-            </div>
-
-            <div class="form-group">
-              <label for="email">電子郵件</label>
-              <input id="email" name="email" type="email" placeholder="請輸入您的 Email">
-            </div>
-
-            <div class="form-group">
-              <label for="message">需求說明</label>
-              <textarea id="message" name="message" placeholder="例如：公司設立、變更登記、記帳報稅、稅務規劃等"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">送出詢問</button>
-          </form>
         </div>
       </div>
     </div>
