@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jenchuan Consulting | 專業企業顧問服務</title>
-  <meta name="description" content="Jenchuan Consulting 提供企業管理、財務規劃、稅務顧問與營運策略整合服務，協助企業穩健成長。" />
-  <meta name="keywords" content="企業顧問, 財務顧問, 稅務規劃, 工廠登記, 管理顧問, Jenchuan" />
-  <meta name="author" content="Jenchuan Consulting" />
+
+  <title>仁川記帳及報稅代理人事務所｜工商登記・記帳報稅・稅務諮詢</title>
+  <meta name="description" content="仁川記帳及報稅代理人事務所、仁川事業有限公司，提供工商登記、記帳報稅、稅務諮詢、租稅規劃、勞健保單位設立與變更等專業服務。" />
+  <meta name="keywords" content="仁川記帳及報稅代理人事務所, 仁川事業有限公司, 記帳報稅, 工商登記, 稅務諮詢, 彰化員林, 勞健保, 公司設立" />
+  <meta name="author" content="仁川記帳及報稅代理人事務所" />
 
   <style>
     :root {
       --primary: #0f172a;
       --secondary: #1e293b;
-      --accent: #c9a227;
+      --accent: #b68b2f;
       --light: #f8fafc;
+      --white: #ffffff;
       --gray: #64748b;
       --border: #e2e8f0;
-      --white: #ffffff;
-      --max-width: 1200px;
+      --soft: #f6f1e8;
       --radius: 18px;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1180px;
     }
 
     * {
@@ -33,17 +35,12 @@
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       background: var(--light);
       color: var(--primary);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     a {
       text-decoration: none;
       color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .container {
@@ -55,27 +52,30 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
     .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 16px 0;
     }
 
     .logo {
-      font-size: 1.3rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--primary);
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
     }
 
     .logo span {
       color: var(--accent);
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
 
     .nav-links {
@@ -85,9 +85,9 @@
     }
 
     .nav-links a {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: var(--secondary);
-      transition: 0.25s;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
@@ -96,8 +96,8 @@
 
     .menu-toggle {
       display: none;
-      background: none;
       border: none;
+      background: none;
       font-size: 1.6rem;
       cursor: pointer;
       color: var(--primary);
@@ -108,8 +108,7 @@
       padding: 12px 22px;
       border-radius: 999px;
       font-weight: 700;
-      transition: 0.25s;
-      border: 1px solid transparent;
+      transition: 0.2s;
     }
 
     .btn-primary {
@@ -119,47 +118,46 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(201, 162, 39, 0.25);
+      box-shadow: 0 8px 20px rgba(182, 139, 47, 0.22);
     }
 
     .btn-outline {
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: var(--primary);
+      border: 1px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: #fff;
     }
 
     .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      background: rgba(255,255,255,0.08);
     }
 
     .hero {
-      padding: 96px 0 80px;
+      padding: 96px 0 78px;
       background:
-        linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)),
-        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: white;
+        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)),
+        url("https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: #fff;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
       align-items: center;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.18;
-      margin-bottom: 18px;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
       font-weight: 900;
     }
 
     .hero p {
-      font-size: 1.08rem;
-      max-width: 700px;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 28px;
+      font-size: 1.03rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 26px;
+      max-width: 760px;
     }
 
     .hero-actions {
@@ -169,8 +167,8 @@
     }
 
     .hero-card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.18);
       border-radius: var(--radius);
       padding: 28px;
       backdrop-filter: blur(8px);
@@ -179,13 +177,28 @@
 
     .hero-card h3 {
       margin-bottom: 12px;
-      font-size: 1.2rem;
+      font-size: 1.18rem;
     }
 
-    .hero-card p {
-      margin-bottom: 0;
-      font-size: 0.98rem;
-      color: rgba(255, 255, 255, 0.88);
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 22px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.97rem;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #f7d98c;
+      font-weight: 900;
     }
 
     section {
@@ -194,144 +207,163 @@
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 46px;
     }
 
     .section-title small {
       display: inline-block;
+      margin-bottom: 10px;
       color: var(--accent);
       font-weight: 800;
-      margin-bottom: 10px;
       letter-spacing: 1px;
     }
 
     .section-title h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       margin-bottom: 12px;
     }
 
     .section-title p {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
       color: var(--gray);
     }
 
-    .about-grid {
+    .about-grid,
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: center;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .about-box {
+    .card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 34px;
+      padding: 32px;
       box-shadow: var(--shadow);
     }
 
-    .about-box h3 {
+    .card h3 {
       margin-bottom: 14px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
-    .about-box p {
+    .card p {
       color: #334155;
       margin-bottom: 14px;
     }
 
-    .about-list {
+    .bullet-list {
       list-style: none;
-      margin-top: 18px;
+      margin-top: 10px;
     }
 
-    .about-list li {
+    .bullet-list li {
       margin-bottom: 12px;
-      color: #334155;
-      position: relative;
       padding-left: 24px;
+      position: relative;
+      color: #334155;
     }
 
-    .about-list li::before {
-      content: "✓";
-      color: var(--accent);
+    .bullet-list li::before {
+      content: "•";
       position: absolute;
       left: 0;
       top: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
       font-weight: 800;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .service-card {
       background: var(--white);
-      border-radius: var(--radius);
-      padding: 30px;
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
       box-shadow: var(--shadow);
-      transition: 0.25s;
+      transition: 0.2s;
     }
 
     .service-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
     .service-icon {
-      width: 56px;
-      height: 56px;
+      width: 54px;
+      height: 54px;
       border-radius: 14px;
-      background: #f8f1d4;
-      color: #8a6c08;
+      background: var(--soft);
+      color: #8d6d22;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      font-weight: 800;
+      font-weight: 900;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
     }
 
     .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.18rem;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
     }
 
-    .service-card p {
+    .service-card ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .service-card li {
       color: var(--gray);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      padding-left: 18px;
+      position: relative;
     }
 
-    .features {
+    .service-card li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .stats {
       background: linear-gradient(180deg, #fff, #f8fafc);
     }
 
-    .feature-grid {
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .feature-item {
+    .stat-item {
       background: var(--white);
-      padding: 26px 22px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
+      padding: 28px 22px;
       text-align: center;
       box-shadow: var(--shadow);
     }
 
-    .feature-item h3 {
-      font-size: 1.08rem;
-      margin-bottom: 10px;
+    .stat-item h3 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
 
-    .feature-item p {
+    .stat-item p {
       color: var(--gray);
-      font-size: 0.94rem;
+      font-size: 0.96rem;
     }
 
     .faq-wrap {
@@ -357,10 +389,10 @@
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
+      color: var(--primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: var(--primary);
     }
 
     .faq-answer {
@@ -371,29 +403,8 @@
     }
 
     .faq-answer p {
-      padding-bottom: 20px;
       color: var(--gray);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .contact-card,
-    .contact-form {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card h3,
-    .contact-form h3 {
-      margin-bottom: 18px;
-      font-size: 1.35rem;
+      padding-bottom: 20px;
     }
 
     .contact-info {
@@ -409,14 +420,26 @@
       color: var(--primary);
     }
 
+    .contact-person {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .contact-person h4 {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
     .form-group {
       margin-bottom: 16px;
     }
 
     .form-group label {
       display: block;
-      font-weight: 700;
       margin-bottom: 8px;
+      font-weight: 700;
       font-size: 0.95rem;
     }
 
@@ -435,7 +458,7 @@
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+      box-shadow: 0 0 0 3px rgba(182, 139, 47, 0.15);
     }
 
     .form-group textarea {
@@ -445,21 +468,16 @@
 
     footer {
       background: var(--primary);
-      color: rgba(255,255,255,0.85);
-      padding: 34px 0;
-      margin-top: 20px;
+      color: rgba(255,255,255,0.86);
+      padding: 32px 0;
     }
 
     .footer-wrap {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
       align-items: center;
-    }
-
-    .footer-wrap p {
-      font-size: 0.95rem;
     }
 
     .footer-links {
@@ -477,16 +495,8 @@
       .about-grid,
       .contact-grid,
       .services-grid,
-      .feature-grid {
+      .stats-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 72px 0 56px;
-      }
-
-      .hero-card {
-        max-width: 520px;
       }
     }
 
@@ -496,9 +506,10 @@
       }
 
       .nav-links {
+        display: none;
         position: absolute;
-        top: 72px;
         right: 4%;
+        top: 72px;
         background: var(--white);
         border: 1px solid var(--border);
         border-radius: 16px;
@@ -507,7 +518,6 @@
         align-items: flex-start;
         padding: 18px;
         min-width: 220px;
-        display: none;
       }
 
       .nav-links.active {
@@ -518,10 +528,6 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .section-title {
-        margin-bottom: 36px;
-      }
     }
   </style>
 </head>
@@ -529,14 +535,17 @@
 
   <header>
     <div class="container navbar">
-      <div class="logo">JEN<span>CHUAN</span></div>
+      <div class="logo">
+        仁川記帳及報稅代理人事務所
+        <span>仁川事業有限公司</span>
+      </div>
 
       <button class="menu-toggle" id="menuToggle">☰</button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#about">關於我們</a>
+        <a href="#about">事務所介紹</a>
         <a href="#services">服務項目</a>
-        <a href="#features">核心優勢</a>
+        <a href="#advantages">專業優勢</a>
         <a href="#faq">常見問題</a>
         <a href="#contact" class="btn btn-primary">立即聯絡</a>
       </nav>
@@ -546,10 +555,12 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <h1>協助企業穩健經營，建立更有策略的成長基礎</h1>
+        <h1>工商登記、記帳報稅、稅務規劃<br>提供專業且穩健的服務</h1>
         <p>
-          Jenchuan Consulting 專注於企業管理、財務規劃、稅務顧問與營運策略整合，
-          以清晰、可靠、可執行的方式，協助企業面對成長、合規與經營決策挑戰。
+          仁川記帳及報稅代理人事務所與仁川事業有限公司，
+          深耕業界二十餘年，服務範圍涵蓋工商登記、記帳報稅、
+          稅務諮詢、租稅規劃與勞健保單位設立變更等事項，
+          協助企業與商家在經營過程中更安心、更有效率。
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">立即諮詢</a>
@@ -558,11 +569,13 @@
       </div>
 
       <div class="hero-card">
-        <h3>專業顧問服務</h3>
-        <p>
-          從企業設立、營運流程、財務管理到稅務規劃，
-          提供系統化協助，讓企業在發展每一步都更有方向。
-        </p>
+        <h3>服務內容涵蓋</h3>
+        <ul>
+          <li>公司、分公司、行號設立與各項變更登記</li>
+          <li>會計帳務處理、營業稅與營所稅申報</li>
+          <li>各類所得扣繳、決清算與印花稅申報</li>
+          <li>租稅規劃、稅務行政救濟與顧問諮詢</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -571,32 +584,36 @@
     <div class="container">
       <div class="section-title">
         <small>ABOUT</small>
-        <h2>關於我們</h2>
+        <h2>事務所介紹</h2>
         <p>
-          我們相信，真正有效的顧問服務，不只是提供建議，而是幫助企業把複雜問題整理成清楚、可執行的解法。
+          從在地服務出發，逐步累積跨產業經驗，持續以專業與效率陪伴客戶成長。
         </p>
       </div>
 
       <div class="about-grid">
-        <div class="about-box">
-          <h3>專業、穩健、重視落地執行</h3>
+        <div class="card">
+          <h3>二十餘年專業經驗，服務遍及全台</h3>
           <p>
-            我們協助企業處理從成立初期到擴張階段可能遇到的管理與財務議題，
-            以實務經驗結合法規理解，提供更符合現場需求的建議。
+            我們的團隊已走過二十幾年的歷程，從最初的兩人團隊，
+            成長為目前擁有十多位專業人才的服務團隊。
           </p>
           <p>
-            無論是公司設立、營運調整、制度優化，或稅務與財務規劃，
-            都以「清楚、合法、有效率」為核心。
+            業務主要分為記帳與工商兩大部門，累積了豐富的稅務經驗與深厚的工商登記實務，
+            能依不同客戶型態提供穩健且細緻的協助。
+          </p>
+          <p>
+            客戶群遍布台灣各地，服務對象橫跨電子大廠、製造業、
+            一般商行、餐廳、補習班等多元產業。
           </p>
         </div>
 
-        <div class="about-box">
-          <h3>我們的服務特色</h3>
-          <ul class="about-list">
-            <li>提供一對一需求分析與客製化建議</li>
-            <li>整合營運、財務、稅務與行政流程</li>
-            <li>協助企業建立更穩健的管理基礎</li>
-            <li>重視溝通效率與執行可行性</li>
+        <div class="card" id="advantages">
+          <h3>我們的專業優勢</h3>
+          <ul class="bullet-list">
+            <li>深耕二十餘年，具備實務經驗與服務穩定度</li>
+            <li>分設記帳與工商部門，作業分工清楚、處理更有效率</li>
+            <li>熟悉各類型企業與商家需求，服務產業範圍廣泛</li>
+            <li>兼顧法規、時效與實務操作，協助客戶降低行政負擔</li>
           </ul>
         </div>
       </div>
@@ -609,94 +626,75 @@
         <small>SERVICES</small>
         <h2>服務項目</h2>
         <p>
-          以下為常見服務範圍，你可以依實際業務內容再做調整。
+          提供完整的工商、記帳報稅與稅務諮詢服務，協助企業在不同階段皆能順利運作。
         </p>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">01</div>
-          <h3>企業設立與登記規劃</h3>
-          <p>
-            協助公司設立、組織調整、登記事項規劃與相關行政流程整理，
-            讓企業在起步與變動階段更順利。
-          </p>
+          <div class="service-icon">工商</div>
+          <h3>工商登記服務</h3>
+          <ul>
+            <li>公司、分公司、行號設立登記</li>
+            <li>公司各項變更登記（增減資、股權移轉、歇業復業、遷址等）</li>
+            <li>僑外投資登記、外商分公司、辦事處設立登記</li>
+            <li>公司合併分割登記</li>
+            <li>公司解散清算登記</li>
+            <li>財團法人設立／變更登記</li>
+            <li>勞健保單位設立、變更</li>
+          </ul>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">02</div>
-          <h3>財務與稅務顧問</h3>
-          <p>
-            協助企業建立清楚的財務結構與稅務思維，降低經營風險，
-            提升決策品質與整體效率。
-          </p>
+          <div class="service-icon">記帳</div>
+          <h3>記帳報稅服務</h3>
+          <ul>
+            <li>會計帳務處理</li>
+            <li>營業稅申報</li>
+            <li>暫繳申報</li>
+            <li>營所稅結算申報及未分配盈餘申報</li>
+            <li>機關團體結算申報</li>
+            <li>年度各類所得扣繳暨免扣繳憑單申報</li>
+            <li>公司行號決清算申報</li>
+            <li>印花稅申報</li>
+          </ul>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">03</div>
-          <h3>營運流程與制度優化</h3>
-          <p>
-            針對現有營運流程進行分析與調整，改善資訊傳遞、作業銜接與管理制度，
-            提高組織運作穩定性。
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">04</div>
-          <h3>經營策略與管理諮詢</h3>
-          <p>
-            協助企業釐清發展方向、資源配置與經營重點，
-            讓策略規劃不只停留在想法，而能真正落實執行。
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">05</div>
-          <h3>法規與合規方向整理</h3>
-          <p>
-            針對企業日常營運所涉及的制度與法規需求，
-            提供整理、判讀與風險提醒，協助降低不必要的成本。
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">06</div>
-          <h3>客製化專案顧問服務</h3>
-          <p>
-            若你有特定產業、特定流程或跨部門整合需求，
-            也可依實際情況規劃專屬的顧問方案。
-          </p>
+          <div class="service-icon">諮詢</div>
+          <h3>諮詢服務</h3>
+          <ul>
+            <li>稅務諮詢與規劃</li>
+            <li>稅務行政救濟服務</li>
+            <li>個人（家族）租稅規劃</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="features" class="features">
+  <section class="stats">
     <div class="container">
       <div class="section-title">
-        <small>WHY US</small>
-        <h2>為什麼選擇我們</h2>
+        <small>FEATURES</small>
+        <h2>專業服務特色</h2>
         <p>
-          不只提供資訊，而是把資訊轉化成可操作的商業判斷與實務建議。
+          用長期累積的經驗，為不同規模、不同產業型態的客戶提供穩定支援。
         </p>
       </div>
 
-      <div class="feature-grid">
-        <div class="feature-item">
-          <h3>專業整合</h3>
-          <p>結合經營、財務、制度與實務經驗，提供更完整的建議。</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>20+</h3>
+          <p>二十餘年實務經驗，熟悉企業各階段常見需求與申報流程</p>
         </div>
-        <div class="feature-item">
-          <h3>清楚溝通</h3>
-          <p>將複雜問題整理成易理解的方向，降低溝通成本。</p>
+        <div class="stat-item">
+          <h3>10+</h3>
+          <p>十多位專業人才組成的團隊，提供分工明確的服務支援</p>
         </div>
-        <div class="feature-item">
-          <h3>重視執行</h3>
-          <p>建議不只停留在理論，而是能真正落地實施。</p>
-        </div>
-        <div class="feature-item">
-          <h3>長期陪伴</h3>
-          <p>不只是一次性服務，而是企業穩定成長的長期夥伴。</p>
+        <div class="stat-item">
+          <h3>全台</h3>
+          <p>客戶群遍及台灣，涵蓋電子、製造、商行、餐飲、教育等多元產業</p>
         </div>
       </div>
     </div>
@@ -708,46 +706,47 @@
         <small>FAQ</small>
         <h2>常見問題</h2>
         <p>
-          你可以先放最常被客戶問到的問題，提升網站的完整度與信任感。
+          以下整理客戶常見的初步問題，方便快速了解服務方向。
         </p>
       </div>
 
       <div class="faq-wrap">
         <div class="faq-item">
           <button class="faq-question">
-            你們主要服務哪些類型的客戶？
+            新設公司或行號，可以協助辦到好嗎？
             <span>＋</span>
           </button>
           <div class="faq-answer">
             <p>
-              可依實際情況填寫，例如：中小企業、新創公司、家族企業、工廠、服務業、
-              專業事務所等，依不同需求提供相對應的顧問建議。
+              可以。我們可依實際需求協助辦理公司、分公司、行號設立登記，
+              並進一步處理後續相關變更、勞健保單位設立與基礎行政事項。
             </p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            第一次諮詢需要準備什麼資料？
+            沒有內部會計人員，也可以委託記帳報稅嗎？
             <span>＋</span>
           </button>
           <div class="faq-answer">
             <p>
-              建議先整理目前遇到的問題、企業基本資料、既有流程或財務相關資訊，
-              讓我們能更快掌握狀況並提供更具體的建議。
+              可以。許多中小企業、商行、餐廳與補習班等客戶，
+              皆可透過委外方式處理日常帳務、營業稅、年度申報與扣繳作業，
+              以降低行政負擔並提升作業穩定度。
             </p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            是否可以依企業需求提供客製化方案？
+            第一次洽詢前需要準備哪些資料？
             <span>＋</span>
           </button>
           <div class="faq-answer">
             <p>
-              可以。若你有特定產業背景、跨部門協作問題、流程整合或制度規劃需求，
-              都可以依需求量身規劃合適的服務內容。
+              可先準備公司或商號基本資料、目前欲辦理事項、是否已有帳務資料、
+              是否有員工與薪資作業需求等資訊，便於更快速評估與安排服務方向。
             </p>
           </div>
         </div>
@@ -761,41 +760,56 @@
         <small>CONTACT</small>
         <h2>聯絡我們</h2>
         <p>
-          若你正在尋找可靠的顧問合作夥伴，歡迎與我們聯繫。
+          歡迎來電或透過電子郵件與我們聯繫，將由專人為您提供協助。
         </p>
       </div>
 
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="card">
           <h3>聯絡資訊</h3>
           <ul class="contact-info">
-            <li><strong>公司名稱：</strong>Jenchuan Consulting</li>
-            <li><strong>聯絡電話：</strong>02-1234-5678</li>
-            <li><strong>電子郵件：</strong>info@jenchuan.com</li>
-            <li><strong>公司地址：</strong>台北市中山區範例路 100 號 8 樓</li>
-            <li><strong>服務時間：</strong>週一至週五 09:00 - 18:00</li>
+            <li><strong>事務所名稱：</strong>仁川記帳及報稅代理人事務所</li>
+            <li><strong>公司名稱：</strong>仁川事業有限公司</li>
+            <li><strong>電話：</strong>04-8333741</li>
+            <li><strong>傳真：</strong>04-8370831</li>
+            <li><strong>Email：</strong><a href="mailto:chaochia@ms1.hinet.net">chaochia@ms1.hinet.net</a></li>
+            <li><strong>地址：</strong>510 彰化縣員林市建國路142號</li>
           </ul>
+
+          <div class="contact-person">
+            <h4>聯絡窗口</h4>
+            <ul class="contact-info">
+              <li><strong>江莉莉</strong></li>
+              <li><strong>手機：</strong>0919-834441</li>
+              <li><strong>LINE ID：</strong>8333741</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="contact-form">
+        <div class="card">
           <h3>線上詢問</h3>
           <form>
             <div class="form-group">
               <label for="name">姓名</label>
-              <input type="text" id="name" name="name" placeholder="請輸入您的姓名">
+              <input id="name" name="name" type="text" placeholder="請輸入您的姓名">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">電話</label>
+              <input id="phone" name="phone" type="text" placeholder="請輸入您的電話">
             </div>
 
             <div class="form-group">
               <label for="email">電子郵件</label>
-              <input type="email" id="email" name="email" placeholder="請輸入您的 Email">
+              <input id="email" name="email" type="email" placeholder="請輸入您的 Email">
             </div>
 
             <div class="form-group">
               <label for="message">需求說明</label>
-              <textarea id="message" name="message" placeholder="請簡單描述您的需求"></textarea>
+              <textarea id="message" name="message" placeholder="例如：公司設立、變更登記、記帳報稅、稅務規劃等"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">送出訊息</button>
+            <button type="submit" class="btn btn-primary">送出詢問</button>
           </form>
         </div>
       </div>
@@ -804,9 +818,9 @@
 
   <footer>
     <div class="container footer-wrap">
-      <p>© 2026 Jenchuan Consulting. All Rights Reserved.</p>
+      <div>© 2026 仁川記帳及報稅代理人事務所 / 仁川事業有限公司 All Rights Reserved.</div>
       <div class="footer-links">
-        <a href="#about">關於我們</a>
+        <a href="#about">事務所介紹</a>
         <a href="#services">服務項目</a>
         <a href="#faq">常見問題</a>
         <a href="#contact">聯絡我們</a>
