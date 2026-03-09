@@ -6,8 +6,11 @@
 
   <title>仁川記帳及報稅代理人事務所｜工商登記・記帳報稅・稅務諮詢</title>
   <meta name="description" content="仁川記帳及報稅代理人事務所、仁川事業有限公司，提供工商登記、記帳報稅、稅務諮詢、租稅規劃、勞健保單位設立與變更等專業服務。" />
-  <meta name="keywords" content="仁川記帳及報稅代理人事務所, 仁川事業有限公司, 記帳報稅, 工商登記, 稅務諮詢, 彰化員林, 勞健保, 公司設立" />
   <meta name="author" content="仁川記帳及報稅代理人事務所" />
+  <meta property="og:title" content="仁川記帳及報稅代理人事務所" />
+  <meta property="og:description" content="提供工商登記、記帳報稅、稅務諮詢等專業服務。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="logo.png" type="image/png" />
 
   <style>
     :root {
@@ -20,6 +23,7 @@
       --border: #e2e8f0;
       --soft: #f6f1e8;
       --radius: 18px;
+      --radius-lg: 24px;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --max-width: 1180px;
     }
@@ -74,10 +78,6 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 900;
-      font-size: 1.1rem;
-      letter-spacing: 0.2px;
-      line-height: 1.3;
       min-width: 0;
     }
 
@@ -93,6 +93,7 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
+      line-height: 1.3;
     }
 
     .logo-text strong {
@@ -156,6 +157,10 @@
       color: #111827;
     }
 
+    .nav-links a.btn-primary:hover {
+      color: #111827;
+    }
+
     .btn-outline {
       border: 1px solid rgba(255,255,255,0.35);
       background: transparent;
@@ -164,13 +169,14 @@
 
     .btn-outline:hover {
       background: rgba(255,255,255,0.08);
+      color: #fff;
     }
 
     .hero {
       padding: 96px 0 78px;
       background:
         linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)),
-        url("https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+        url("101.jpg") center/cover no-repeat;
       color: #fff;
     }
 
@@ -449,7 +455,7 @@
       align-items: stretch;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: var(--radius-lg);
       padding: 32px;
       box-shadow: var(--shadow);
     }
@@ -490,7 +496,6 @@
       min-width: 140px;
       padding: 12px 18px;
       border-radius: 999px;
-      background: var(--primary);
       color: #ffffff;
       font-weight: 700;
       font-size: 0.96rem;
@@ -499,9 +504,37 @@
     }
 
     .business-card-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .fb-btn {
+      background: #1877f2;
+      color: #fff;
+    }
+
+    .fb-btn:hover {
+      background: #0f5ec9;
+      color: #fff;
+    }
+
+    .line-btn {
+      background: #06c755;
+      color: #fff;
+    }
+
+    .line-btn:hover {
+      background: #049c43;
+      color: #fff;
+    }
+
+    .map-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .map-btn:hover {
       background: var(--accent);
       color: #111827;
-      transform: translateY(-2px);
     }
 
     .contact-info-panel {
@@ -530,6 +563,10 @@
     .contact-info strong {
       color: var(--primary);
       font-weight: 800;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent);
     }
 
     .contact-person {
@@ -672,7 +709,7 @@
         </div>
       </a>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單">☰</button>
 
       <nav class="nav-links" id="navLinks">
         <a href="#about">事務所介紹</a>
@@ -695,7 +732,7 @@
           協助企業與商家在經營過程中更安心、更有效率。
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">立即諮詢</a>
+          <a href="#contact" class="btn btn-primary">立即聯絡</a>
           <a href="#services" class="btn btn-outline">查看服務</a>
         </div>
       </div>
@@ -844,11 +881,11 @@
 
       <div class="faq-wrap">
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1">
             新設公司或行號，可以協助辦到好嗎？
             <span>＋</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq1">
             <p>
               可以。我們可依實際需求協助辦理公司、分公司、行號設立登記，
               並進一步處理後續相關變更、勞健保單位設立與基礎行政事項。
@@ -857,11 +894,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2">
             沒有內部會計人員，也可以委託記帳報稅嗎？
             <span>＋</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq2">
             <p>
               可以。許多中小企業、商行、餐廳與補習班等客戶，
               皆可透過委外方式處理日常帳務、營業稅、年度申報與扣繳作業，
@@ -871,11 +908,11 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3">
             第一次洽詢前需要準備哪些資料？
             <span>＋</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq3">
             <p>
               可先準備公司或商號基本資料、目前欲辦理事項、是否已有帳務資料、
               是否有員工與薪資作業需求等資訊，便於更快速評估與安排服務方向。
@@ -903,7 +940,7 @@
 
             <div class="business-card-buttons">
               <a
-                class="business-card-btn"
+                class="business-card-btn fb-btn"
                 href="https://www.facebook.com/p/%E4%BB%81%E5%B7%9D%E8%A8%98%E5%B8%B3%E5%8F%8A%E5%A0%B1%E7%A8%85%E4%BB%A3%E7%90%86%E4%BA%BA%E4%BA%8B%E5%8B%99%E6%89%80-100068639212441/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -912,7 +949,7 @@
               </a>
 
               <a
-                class="business-card-btn"
+                class="business-card-btn line-btn"
                 href="https://line.me/ti/p/BMWjcyQfnu"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -921,7 +958,7 @@
               </a>
 
               <a
-                class="business-card-btn"
+                class="business-card-btn map-btn"
                 href="https://maps.app.goo.gl/qFRhgErJcmCwjqot9"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -938,18 +975,18 @@
           <ul class="contact-info">
             <li><strong>事務所名稱：</strong>仁川記帳及報稅代理人事務所</li>
             <li><strong>公司名稱：</strong>仁川事業有限公司</li>
-            <li><strong>電話：</strong>04-8333741</li>
+            <li><strong>電話：</strong><a href="tel:048333741">04-8333741</a></li>
             <li><strong>傳真：</strong>04-8370831</li>
             <li><strong>Email：</strong><a href="mailto:chaochia@ms1.hinet.net">chaochia@ms1.hinet.net</a></li>
-            <li><strong>地址：</strong>510 彰化縣員林市建國路142號</li>
+            <li><strong>地址：</strong><a href="https://maps.app.goo.gl/qFRhgErJcmCwjqot9" target="_blank" rel="noopener noreferrer">510 彰化縣員林市建國路142號</a></li>
           </ul>
 
           <div class="contact-person">
             <h4>負責人</h4>
             <ul class="contact-info">
               <li><strong>江莉莉</strong></li>
-              <li><strong>手機：</strong>0919-8344441</li>
-              <li><strong>LINE ID：</strong>8374441</li>
+              <li><strong>手機：</strong><a href="tel:0919834441">0919-834441</a></li>
+              <li><strong>LINE ID：</strong><a href="https://line.me/ti/p/BMWjcyQfnu" target="_blank" rel="noopener noreferrer">8374441</a></li>
             </ul>
           </div>
         </div>
@@ -984,19 +1021,23 @@
       button.addEventListener("click", () => {
         const answer = button.nextElementSibling;
         const symbol = button.querySelector("span");
+        const isOpen = !!answer.style.maxHeight;
 
-        if (answer.style.maxHeight) {
-          answer.style.maxHeight = null;
-          symbol.textContent = "＋";
-        } else {
-          document.querySelectorAll(".faq-answer").forEach((item) => {
-            item.style.maxHeight = null;
-          });
-          document.querySelectorAll(".faq-question span").forEach((item) => {
-            item.textContent = "＋";
-          });
+        document.querySelectorAll(".faq-answer").forEach((item) => {
+          item.style.maxHeight = null;
+        });
 
+        document.querySelectorAll(".faq-question").forEach((item) => {
+          item.setAttribute("aria-expanded", "false");
+        });
+
+        document.querySelectorAll(".faq-question span").forEach((item) => {
+          item.textContent = "＋";
+        });
+
+        if (!isOpen) {
           answer.style.maxHeight = answer.scrollHeight + "px";
+          button.setAttribute("aria-expanded", "true");
           symbol.textContent = "－";
         }
       });
