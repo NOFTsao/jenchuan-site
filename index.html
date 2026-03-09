@@ -123,7 +123,7 @@
       transition: 0.2s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:not(.btn-primary):hover {
       color: var(--accent);
     }
 
@@ -153,6 +153,7 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(182, 139, 47, 0.22);
+      color: #111827;
     }
 
     .btn-outline {
@@ -264,8 +265,7 @@
       color: var(--gray);
     }
 
-    .about-grid,
-    .contact-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
@@ -442,90 +442,108 @@
       padding-bottom: 20px;
     }
 
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.25fr 0.95fr;
-  gap: 48px;
-  align-items: stretch;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 42px;
-  box-shadow: var(--shadow);
-}
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 0.85fr;
+      gap: 40px;
+      align-items: stretch;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
 
-.business-card-panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
+    .business-card-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      min-height: 100%;
+    }
 
-.business-card-image {
-  width: 100%;
-  max-width: 980px;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-}
+    .business-card-panel > div {
+      width: 100%;
+    }
 
-.contact-info-panel h3 {
-  margin-bottom: 24px;
-  font-size: 1.9rem;
-  color: var(--primary);
-}
+    .business-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
 
-.contact-info {
-  list-style: none;
-}
+    .business-card-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-.contact-info li {
-  margin-bottom: 22px;
-  color: #334155;
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
+    .business-card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 140px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.96rem;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
 
-.contact-info strong {
-  color: var(--primary);
-  font-weight: 800;
-}
+    .business-card-btn:hover {
+      background: var(--accent);
+      color: #111827;
+      transform: translateY(-2px);
+    }
 
-.contact-person {
-  margin-top: 28px;
-  padding-top: 28px;
-  border-top: 1px dashed var(--border);
-}
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.contact-person h4 {
-  margin-bottom: 16px;
-  font-size: 1.45rem;
-  color: var(--primary);
-}
+    .contact-info-panel h3 {
+      margin-bottom: 24px;
+      font-size: 1.9rem;
+      color: var(--primary);
+    }
 
-@media (max-width: 992px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 24px;
-  }
+    .contact-info {
+      list-style: none;
+    }
 
-  .contact-info-panel h3 {
-    font-size: 1.6rem;
-  }
+    .contact-info li {
+      margin-bottom: 22px;
+      color: #334155;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
 
-  .contact-info li {
-    font-size: 1.02rem;
-    margin-bottom: 16px;
-  }
+    .contact-info strong {
+      color: var(--primary);
+      font-weight: 800;
+    }
 
-  .contact-person h4 {
-    font-size: 1.25rem;
-  }
-}
+    .contact-person {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .contact-person h4 {
+      margin-bottom: 16px;
+      font-size: 1.45rem;
+      color: var(--primary);
+    }
+
     footer {
       background: var(--primary);
       color: rgba(255,255,255,0.86);
@@ -557,6 +575,33 @@
       .stats-grid,
       .contact-layout {
         grid-template-columns: 1fr;
+      }
+
+      .contact-layout {
+        gap: 28px;
+        padding: 24px;
+      }
+
+      .business-card-panel {
+        min-height: auto;
+      }
+
+      .business-card-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .contact-info-panel h3 {
+        font-size: 1.6rem;
+      }
+
+      .contact-info li {
+        font-size: 1.02rem;
+        margin-bottom: 16px;
+      }
+
+      .contact-person h4 {
+        font-size: 1.25rem;
       }
     }
 
@@ -606,6 +651,12 @@
       .logo-text span {
         font-size: 0.8rem;
       }
+
+      .business-card-btn {
+        min-width: 120px;
+        font-size: 0.92rem;
+        padding: 10px 16px;
+      }
     }
   </style>
 </head>
@@ -636,11 +687,11 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <h1>工商登記、記帳報稅、稅務規劃<br>提供專業且穩健的服務</h1>
+        <h1>工商登記、記帳報稅<br>提供專業且穩健的服務</h1>
         <p>
           仁川記帳及報稅代理人事務所與仁川事業有限公司，
           深耕業界二十餘年，服務範圍涵蓋工商登記、記帳報稅、
-          稅務諮詢、租稅規劃與勞健保單位設立變更等事項，
+          稅務諮詢與勞健保單位設立變更等事項，
           協助企業與商家在經營過程中更安心、更有效率。
         </p>
         <div class="hero-actions">
@@ -684,7 +735,7 @@
           </p>
           <p>
             客戶群遍布台灣各地，服務對象橫跨電子大廠、製造業、
-            一般商行、餐廳、補習班等多元產業。
+            餐飲業、補習班等多元產業。
           </p>
         </div>
 
@@ -835,45 +886,77 @@
     </div>
   </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <small>CONTACT</small>
-      <h2>聯絡我們</h2>
-      <p>
-        歡迎來電或透過電子郵件與我們聯繫，將由專人為您提供協助。
-      </p>
-    </div>
-
-    <div class="contact-layout">
-      <div class="business-card-panel">
-        <img src="business-card.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <small>CONTACT</small>
+        <h2>聯絡我們</h2>
+        <p>
+          歡迎來電或透過電子郵件與我們聯繫，將由專人為您提供協助。
+        </p>
       </div>
 
-      <div class="contact-info-panel">
-        <h3>聯絡資訊</h3>
+      <div class="contact-layout">
+        <div class="business-card-panel">
+          <div>
+            <img src="business-card.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
 
-        <ul class="contact-info">
-          <li><strong>事務所名稱：</strong>仁川記帳及報稅代理人事務所</li>
-          <li><strong>公司名稱：</strong>仁川事業有限公司</li>
-          <li><strong>電話：</strong>04-8333741</li>
-          <li><strong>傳真：</strong>04-8370831</li>
-          <li><strong>Email：</strong><a href="mailto:chaochia@ms1.hinet.net">chaochia@ms1.hinet.net</a></li>
-          <li><strong>地址：</strong>510 彰化縣員林市建國路142號</li>
-        </ul>
+            <div class="business-card-buttons">
+              <a
+                class="business-card-btn"
+                href="https://www.facebook.com/p/%E4%BB%81%E5%B7%9D%E8%A8%98%E5%B8%B3%E5%8F%8A%E5%A0%B1%E7%A8%85%E4%BB%A3%E7%90%86%E4%BA%BA%E4%BA%8B%E5%8B%99%E6%89%80-100068639212441/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
 
-        <div class="contact-person">
-          <h4>負責人</h4>
+              <a
+                class="business-card-btn"
+                href="https://line.me/ti/p/BMWjcyQfnu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LINE
+              </a>
+
+              <a
+                class="business-card-btn"
+                href="https://maps.app.goo.gl/qFRhgErJcmCwjqot9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google 地圖
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-panel">
+          <h3>聯絡資訊</h3>
+
           <ul class="contact-info">
-            <li><strong>江莉莉</strong></li>
-            <li><strong>手機：</strong>0919-8344441</li>
-            <li><strong>LINE ID：</strong>8374441</li>
+            <li><strong>事務所名稱：</strong>仁川記帳及報稅代理人事務所</li>
+            <li><strong>公司名稱：</strong>仁川事業有限公司</li>
+            <li><strong>電話：</strong>04-8333741</li>
+            <li><strong>傳真：</strong>04-8370831</li>
+            <li><strong>Email：</strong><a href="mailto:chaochia@ms1.hinet.net">chaochia@ms1.hinet.net</a></li>
+            <li><strong>地址：</strong>510 彰化縣員林市建國路142號</li>
           </ul>
+
+          <div class="contact-person">
+            <h4>負責人</h4>
+            <ul class="contact-info">
+              <li><strong>江莉莉</strong></li>
+              <li><strong>手機：</strong>0919-8344441</li>
+              <li><strong>LINE ID：</strong>8374441</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <footer>
     <div class="container footer-wrap">
       <div>© 2026 仁川記帳及報稅代理人事務所 / 仁川事業有限公司 All Rights Reserved.</div>
