@@ -1,1047 +1,1131 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>仁川記帳及報稅代理人事務所｜工商登記・記帳報稅・稅務諮詢</title>
-  <meta name="description" content="仁川記帳及報稅代理人事務所、仁川事業有限公司，提供工商登記、記帳報稅、稅務諮詢、租稅規劃、勞健保單位設立與變更等專業服務。" />
-  <meta name="author" content="仁川記帳及報稅代理人事務所" />
-  <meta property="og:title" content="仁川記帳及報稅代理人事務所" />
-  <meta property="og:description" content="提供工商登記、記帳報稅、稅務諮詢等專業服務。" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="logo.png" type="image/png" />
-
-  <style>
-    :root {
-      --primary: #0f172a;
-      --secondary: #1e293b;
-      --accent: #b68b2f;
-      --light: #f8fafc;
-      --white: #ffffff;
-      --gray: #64748b;
-      --border: #e2e8f0;
-      --soft: #f6f1e8;
-      --radius: 18px;
-      --radius-lg: 24px;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --max-width: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background: var(--light);
-      color: var(--primary);
-      line-height: 1.75;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 16px 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .logo-img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      flex-shrink: 0;
-      border-radius: 10px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      line-height: 1.3;
-    }
-
-    .logo-text strong {
-      font-size: 1.05rem;
-      color: var(--primary);
-      font-weight: 900;
-      word-break: break-word;
-    }
-
-    .logo-text span {
-      color: var(--accent);
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .nav-links a {
-      font-size: 0.96rem;
-      color: var(--secondary);
-      transition: 0.2s;
-    }
-
-    .nav-links a:not(.btn-primary):hover {
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      border: none;
-      background: none;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--primary);
-      flex-shrink: 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111827;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(182, 139, 47, 0.22);
-      color: #111827;
-    }
-
-    .nav-links a.btn-primary:hover {
-      color: #111827;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.35);
-      background: transparent;
-      color: #fff;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
-
-    .hero {
-      padding: 96px 0 78px;
-      background:
-        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)),
-        url("101.jpg") center/cover no-repeat;
-      color: #fff;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.5rem);
-      line-height: 1.2;
-      margin-bottom: 16px;
-      font-weight: 900;
-    }
-
-    .hero p {
-      font-size: 1.03rem;
-      color: rgba(255,255,255,0.92);
-      margin-bottom: 26px;
-      max-width: 760px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.11);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.18rem;
-    }
-
-    .hero-card ul {
-      list-style: none;
-    }
-
-    .hero-card li {
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 22px;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.97rem;
-    }
-
-    .hero-card li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #f7d98c;
-      font-weight: 900;
-    }
-
-    section {
-      padding: 84px 0;
-      scroll-margin-top: 100px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 46px;
-    }
-
-    .section-title small {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      max-width: 780px;
-      margin: 0 auto;
-      color: var(--gray);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin-bottom: 14px;
-      font-size: 1.3rem;
-    }
-
-    .card p {
-      color: #334155;
-      margin-bottom: 14px;
-    }
-
-    .bullet-list {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    .bullet-list li {
-      margin-bottom: 12px;
-      padding-left: 24px;
-      position: relative;
-      color: #334155;
-    }
-
-    .bullet-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-size: 1.2rem;
-      font-weight: 800;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      transition: 0.2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      background: var(--soft);
-      color: #8d6d22;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-    }
-
-    .service-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .service-card ul {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    .service-card li {
-      color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-      padding-left: 18px;
-      position: relative;
-    }
-
-    .service-card li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .stats {
-      background: linear-gradient(180deg, #fff, #f8fafc);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .stat-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 22px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .stat-item h3 {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .stat-item p {
-      color: var(--gray);
-      font-size: 0.96rem;
-    }
-
-    .faq-wrap {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      margin-bottom: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      padding: 20px 24px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      color: var(--primary);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      padding: 0 24px;
-    }
-
-    .faq-answer p {
-      color: var(--gray);
-      padding-bottom: 20px;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.4fr 0.85fr;
-      gap: 40px;
-      align-items: stretch;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .business-card-panel {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      min-height: 100%;
-    }
-
-    .business-card-panel > div {
-      width: 100%;
-    }
-
-    .business-card-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border: none;
-      box-shadow: none;
-      border-radius: 0;
-    }
-
-    .business-card-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .business-card-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 140px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 0.96rem;
-      border: 1px solid transparent;
-      transition: 0.2s ease;
-    }
-
-    .business-card-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .fb-btn {
-      background: #1877f2;
-      color: #fff;
-    }
-
-    .fb-btn:hover {
-      background: #0f5ec9;
-      color: #fff;
-    }
-
-    .line-btn {
-      background: #06c755;
-      color: #fff;
-    }
-
-    .line-btn:hover {
-      background: #049c43;
-      color: #fff;
-    }
-
-    .map-btn {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .map-btn:hover {
-      background: var(--accent);
-      color: #111827;
-    }
-
-    .contact-info-panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .contact-info-panel h3 {
-      margin-bottom: 24px;
-      font-size: 1.9rem;
-      color: var(--primary);
-    }
-
-    .contact-info {
-      list-style: none;
-    }
-
-    .contact-info li {
-      margin-bottom: 22px;
-      color: #334155;
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-
-    .contact-info strong {
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .contact-info a:hover {
-      color: var(--accent);
-    }
-
-    .contact-person {
-      margin-top: 28px;
-      padding-top: 28px;
-      border-top: 1px dashed var(--border);
-    }
-
-    .contact-person h4 {
-      margin-bottom: 16px;
-      font-size: 1.45rem;
-      color: var(--primary);
-    }
-
-    footer {
-      background: var(--primary);
-      color: rgba(255,255,255,0.86);
-      padding: 32px 0;
-    }
-
-    .footer-wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    @media (max-width: 992px) {
-      .hero-grid,
-      .about-grid,
-      .services-grid,
-      .stats-grid,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-layout {
-        gap: 28px;
-        padding: 24px;
-      }
-
-      .business-card-panel {
-        min-height: auto;
-      }
-
-      .business-card-image {
-        width: 100%;
-        height: auto;
-      }
-
-      .contact-info-panel h3 {
-        font-size: 1.6rem;
-      }
-
-      .contact-info li {
-        font-size: 1.02rem;
-        margin-bottom: 16px;
-      }
-
-      .contact-person h4 {
-        font-size: 1.25rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        right: 4%;
-        top: 78px;
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px;
-        min-width: 220px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .logo {
-        gap: 10px;
-        font-size: 0.98rem;
-      }
-
-      .logo-img {
-        width: 46px;
-        height: 46px;
-      }
-
-      .logo-text strong {
-        font-size: 0.95rem;
-      }
-
-      .logo-text span {
-        font-size: 0.8rem;
-      }
-
-      .business-card-btn {
-        min-width: 120px;
-        font-size: 0.92rem;
-        padding: 10px 16px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="container navbar">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="仁川會計 LOGO" class="logo-img">
-        <div class="logo-text">
-          <strong>仁川記帳及報稅代理人事務所</strong>
-          <span>仁川事業有限公司</span>
-        </div>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">事務所介紹</a>
-        <a href="#services">服務項目</a>
-        <a href="#advantages">專業優勢</a>
-        <a href="#faq">常見問題</a>
-        <a href="#contact" class="btn btn-primary">立即聯絡</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1>工商登記、記帳報稅<br>提供專業且穩健的服務</h1>
-        <p>
-          仁川記帳及報稅代理人事務所與仁川事業有限公司，
-          深耕業界二十餘年，服務範圍涵蓋工商登記、記帳報稅、
-          稅務諮詢與勞健保單位設立變更等事項，
-          協助企業與商家在經營過程中更安心、更有效率。
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">立即聯絡</a>
-          <a href="#services" class="btn btn-outline">查看服務</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <h3>服務內容涵蓋</h3>
-        <ul>
-          <li>公司、分公司、行號設立與各項變更登記</li>
-          <li>會計帳務處理、營業稅與營所稅申報</li>
-          <li>各類所得扣繳、決清算與印花稅申報</li>
-          <li>租稅規劃、稅務行政救濟與顧問諮詢</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <small>ABOUT</small>
-        <h2>事務所介紹</h2>
-        <p>
-          從在地服務出發，逐步累積跨產業經驗，持續以專業與效率陪伴客戶成長。
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="card">
-          <h3>二十餘年專業經驗，服務遍及全台</h3>
-          <p>
-            我們的團隊已走過二十幾年的歷程，從最初的兩人團隊，
-            成長為目前擁有十多位專業人才的服務團隊。
-          </p>
-          <p>
-            業務主要分為記帳與工商兩大部門，累積了豐富的稅務經驗與深厚的工商登記實務，
-            能依不同客戶型態提供穩健且細緻的協助。
-          </p>
-          <p>
-            客戶群遍布台灣各地，服務對象橫跨電子大廠、製造業、
-            餐飲業、補習班等多元產業。
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>我們的專業優勢</h3>
-          <ul class="bullet-list">
-            <li>深耕二十餘年，具備實務經驗與服務穩定度</li>
-            <li>分設記帳與工商部門，作業分工清楚、處理更有效率</li>
-            <li>熟悉各類型企業與商家需求，服務產業範圍廣泛</li>
-            <li>兼顧法規、時效與實務操作，協助客戶降低行政負擔</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <div class="section-title">
-        <small>SERVICES</small>
-        <h2>服務項目</h2>
-        <p>
-          提供完整的工商、記帳報稅與稅務諮詢服務，協助企業在不同階段皆能順利運作。
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">工商</div>
-          <h3>工商登記服務</h3>
-          <ul>
-            <li>公司、分公司、行號設立登記</li>
-            <li>公司各項變更登記（增減資、股權移轉、歇業復業、遷址等）</li>
-            <li>僑外投資登記、外商分公司、辦事處設立登記</li>
-            <li>公司合併分割登記</li>
-            <li>公司解散清算登記</li>
-            <li>財團法人設立／變更登記</li>
-            <li>勞健保單位設立、變更</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">記帳</div>
-          <h3>記帳報稅服務</h3>
-          <ul>
-            <li>會計帳務處理</li>
-            <li>營業稅申報</li>
-            <li>暫繳申報</li>
-            <li>營所稅結算申報及未分配盈餘申報</li>
-            <li>機關團體結算申報</li>
-            <li>年度各類所得扣繳暨免扣繳憑單申報</li>
-            <li>公司行號決清算申報</li>
-            <li>印花稅申報</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">諮詢</div>
-          <h3>諮詢服務</h3>
-          <ul>
-            <li>稅務諮詢與規劃</li>
-            <li>稅務行政救濟服務</li>
-            <li>個人（家族）租稅規劃</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats" id="advantages">
-    <div class="container">
-      <div class="section-title">
-        <small>FEATURES</small>
-        <h2>專業服務特色</h2>
-        <p>
-          用長期累積的經驗，為不同規模、不同產業型態的客戶提供穩定支援。
-        </p>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>20+</h3>
-          <p>二十餘年實務經驗，熟悉企業各階段常見需求與申報流程</p>
-        </div>
-        <div class="stat-item">
-          <h3>10+</h3>
-          <p>十多位專業人才組成的團隊，提供分工明確的服務支援</p>
-        </div>
-        <div class="stat-item">
-          <h3>全台</h3>
-          <p>客戶群遍及台灣，涵蓋電子、製造、商行、餐飲、教育等多元產業</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="container">
-      <div class="section-title">
-        <small>FAQ</small>
-        <h2>常見問題</h2>
-        <p>
-          以下整理客戶常見的初步問題，方便快速了解服務方向。
-        </p>
-      </div>
-
-      <div class="faq-wrap">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq1">
-            新設公司或行號，可以協助辦到好嗎？
-            <span>＋</span>
-          </button>
-          <div class="faq-answer" id="faq1">
-            <p>
-              可以。我們可依實際需求協助辦理公司、分公司、行號設立登記，
-              並進一步處理後續相關變更、勞健保單位設立與基礎行政事項。
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq2">
-            沒有內部會計人員，也可以委託記帳報稅嗎？
-            <span>＋</span>
-          </button>
-          <div class="faq-answer" id="faq2">
-            <p>
-              可以。許多中小企業、商行、餐廳與補習班等客戶，
-              皆可透過委外方式處理日常帳務、營業稅、年度申報與扣繳作業，
-              以降低行政負擔並提升作業穩定度。
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-            第一次洽詢前需要準備哪些資料？
-            <span>＋</span>
-          </button>
-          <div class="faq-answer" id="faq3">
-            <p>
-              可先準備公司或商號基本資料、目前欲辦理事項、是否已有帳務資料、
-              是否有員工與薪資作業需求等資訊，便於更快速評估與安排服務方向。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <small>CONTACT</small>
-        <h2>聯絡我們</h2>
-        <p>
-          歡迎來電或透過電子郵件與我們聯繫，將由專人為您提供協助。
-        </p>
-      </div>
-
-      <div class="contact-layout">
-        <div class="business-card-panel">
-          <div>
-            <img src="business-card.png" alt="仁川記帳及報稅代理人事務所名片" class="business-card-image">
-
-            <div class="business-card-buttons">
-              <a
-                class="business-card-btn fb-btn"
-                href="https://www.facebook.com/p/%E4%BB%81%E5%B7%9D%E8%A8%98%E5%B8%B3%E5%8F%8A%E5%A0%B1%E7%A8%85%E4%BB%A3%E7%90%86%E4%BA%BA%E4%BA%8B%E5%8B%99%E6%89%80-100068639212441/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-
-              <a
-                class="business-card-btn line-btn"
-                href="https://line.me/ti/p/BMWjcyQfnu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LINE
-              </a>
-
-              <a
-                class="business-card-btn map-btn"
-                href="https://maps.app.goo.gl/qFRhgErJcmCwjqot9"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Google 地圖
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-info-panel">
-          <h3>聯絡資訊</h3>
-
-          <ul class="contact-info">
-            <li><strong>事務所名稱：</strong>仁川記帳及報稅代理人事務所</li>
-            <li><strong>公司名稱：</strong>仁川事業有限公司</li>
-            <li><strong>電話：</strong><a href="tel:048333741">04-8333741</a></li>
-            <li><strong>傳真：</strong>04-8370831</li>
-            <li><strong>Email：</strong><a href="mailto:chaochia@ms1.hinet.net">chaochia@ms1.hinet.net</a></li>
-            <li><strong>地址：</strong><a href="https://maps.app.goo.gl/qFRhgErJcmCwjqot9" target="_blank" rel="noopener noreferrer">510 彰化縣員林市建國路142號</a></li>
-          </ul>
-
-          <div class="contact-person">
-            <h4>負責人</h4>
-            <ul class="contact-info">
-              <li><strong>江莉莉</strong></li>
-              <li><strong>手機：</strong><a href="tel:0919834441">0919-834441</a></li>
-              <li><strong>LINE ID：</strong><a href="https://line.me/ti/p/BMWjcyQfnu" target="_blank" rel="noopener noreferrer">8374441</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-wrap">
-      <div>© 2026 仁川記帳及報稅代理人事務所 / 仁川事業有限公司 All Rights Reserved.</div>
-      <div class="footer-links">
-        <a href="#about">事務所介紹</a>
-        <a href="#services">服務項目</a>
-        <a href="#advantages">專業優勢</a>
-        <a href="#faq">常見問題</a>
-        <a href="#contact">聯絡我們</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    const faqButtons = document.querySelectorAll(".faq-question");
-
-    faqButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const answer = button.nextElementSibling;
-        const symbol = button.querySelector("span");
-        const isOpen = !!answer.style.maxHeight;
-
-        document.querySelectorAll(".faq-answer").forEach((item) => {
-          item.style.maxHeight = null;
-        });
-
-        document.querySelectorAll(".faq-question").forEach((item) => {
-          item.setAttribute("aria-expanded", "false");
-        });
-
-        document.querySelectorAll(".faq-question span").forEach((item) => {
-          item.textContent = "＋";
-        });
-
-        if (!isOpen) {
-          answer.style.maxHeight = answer.scrollHeight + "px";
-          button.setAttribute("aria-expanded", "true");
-          symbol.textContent = "－";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仁川記帳及報稅代理人事務所</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            dark: '#A68444',
+                            light: '#E2C485'
+                        },
+                        dark: '#111111',
+                        darker: '#0a0a0a',
+                        light: '#FAFAFA'
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
         }
-      });
-    });
-  </script>
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FAFAFA; color: #111; overflow-x: hidden; }
+        
+        /* 隱藏未啟用的視圖 */
+        .view-section { display: none; opacity: 0; }
+        .view-section.active { display: block; opacity: 1; }
+
+        /* 邊框光束效果 (2px Border Beam) - 修正版 */
+        .beam-card {
+            position: relative;
+            border-radius: 0.75rem;
+            background-color: transparent; /* 必須透明，讓偽元素負責背景 */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+            overflow: hidden; /* 確保旋轉光束被圓角完美裁切 */
+        }
+        
+        .beam-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 70%, #C5A059 100%);
+            animation: spin 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -2; /* 墊在最底層 */
+        }
+        
+        .beam-card::after {
+            content: '';
+            position: absolute;
+            inset: 2px; /* 這裡定義了 2px 的邊框寬度 */
+            background-color: #ffffff; /* 實際的卡片底色 */
+            border-radius: calc(0.75rem - 2px);
+            z-index: -1; /* 蓋在光束上面，文字下面 */
+        }
+        
+        /* 黑色主題的卡片底色 */
+        .dark-theme.beam-card::after { background-color: #1a1a1a; }
+        
+        .beam-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .dark-theme.beam-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .beam-card:hover::before { opacity: 1; } /* 懸停時顯示光束 */
+        
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* FAQ 手風琴 */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        /* 導覽列與背景特效 */
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.6)), url('101.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* 服務大綱懸停彈窗 */
+        .service-dropdown-content {
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .service-trigger:hover .service-dropdown-content {
+            opacity: 1; visibility: visible; transform: translateY(0);
+        }
+
+        /* 磁性按鈕調整 */
+        .magnetic-wrap { display: inline-block; padding: 10px; margin: -10px; cursor: pointer; }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-white flex flex-col min-h-screen">
+
+    <!-- 導覽列 Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer magnetic-wrap" onclick="navTo('home')">
+                    <div class="magnetic flex items-center gap-3">
+                        <img src="logo500x500.png" alt="仁川事務所 Logo" class="h-10 md:h-12 w-auto object-contain">
+                        <div class="flex flex-col">
+                            <span class="text-dark font-bold text-lg leading-tight tracking-wider">仁川記帳及報稅代理人事務所</span>
+                            <span class="text-gold font-medium text-sm leading-tight tracking-wider">仁川事業有限公司</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 電腦版選單 -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#home" onclick="navTo('home')" class="text-dark hover:text-gold transition font-medium text-base magnetic">首頁</a>
+                    <a href="#about" onclick="navTo('about')" class="text-dark hover:text-gold transition font-medium text-base magnetic">事務所介紹</a>
+                    
+                    <!-- 服務項目下拉 -->
+                    <div class="relative group h-full py-8">
+                        <a href="#services" onclick="navTo('services', 'business')" class="text-dark hover:text-gold transition font-medium text-base flex items-center gap-1 magnetic">
+                            服務項目 <iconify-icon icon="mdi:chevron-down"></iconify-icon>
+                        </a>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl border border-gray-100 rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                            <a href="#business" onclick="navTo('services', 'business')" class="block px-4 py-3 text-base text-gray-700 hover:bg-gold hover:text-white transition">工商服務</a>
+                            <a href="#factory" onclick="navTo('services', 'factory')" class="block px-4 py-3 text-base text-gray-700 hover:bg-gold hover:text-white transition">工廠服務</a>
+                            <a href="#tax" onclick="navTo('services', 'tax')" class="block px-4 py-3 text-base text-gray-700 hover:bg-gold hover:text-white transition">財稅服務</a>
+                        </div>
+                    </div>
+                    
+                    <a href="javascript:void(0)" onclick="scrollToSection('home-faq')" class="text-dark hover:text-gold transition font-medium text-base magnetic">常見問題</a>
+                    
+                    <div class="magnetic-wrap">
+                        <a href="#contact" onclick="navTo('contact')" class="magnetic bg-gold text-darker font-bold px-6 py-2.5 rounded-full hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 transition-all text-base tracking-wide inline-block">
+                            立即聯絡
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 手機版選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-gold focus:outline-none p-2">
+                        <iconify-icon icon="mdi:menu" class="text-3xl"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg z-50">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" onclick="navTo('home')" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-gold hover:bg-gray-50 rounded-md">首頁</a>
+                <a href="#about" onclick="navTo('about')" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-gold hover:bg-gray-50 rounded-md">事務所介紹</a>
+                <div class="px-3 py-2">
+                    <span class="block text-base font-medium text-gray-400 mb-2">服務項目</span>
+                    <div class="pl-4 space-y-1 border-l-2 border-gold/30">
+                        <a href="#business" onclick="navTo('services', 'business')" class="block px-3 py-2 text-sm text-gray-600 hover:text-gold">工商服務</a>
+                        <a href="#factory" onclick="navTo('services', 'factory')" class="block px-3 py-2 text-sm text-gray-600 hover:text-gold">工廠服務</a>
+                        <a href="#tax" onclick="navTo('services', 'tax')" class="block px-3 py-2 text-sm text-gray-600 hover:text-gold">財稅服務</a>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" onclick="scrollToSection('home-faq')" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-gold hover:bg-gray-50 rounded-md">常見問題</a>
+                <a href="#contact" onclick="navTo('contact')" class="block px-3 py-3 text-base font-bold text-darker bg-gold hover:bg-gold-light rounded-md">立即聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區塊 -->
+    <main id="app-content" class="flex-grow pt-20">
+        
+        <!-- ==================== HOME VIEW (首頁) ==================== -->
+        <div id="view-home" class="view-section active">
+            <!-- 1. Hero -->
+            <section class="hero-bg min-h-[90vh] flex items-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-dark/20 z-0"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+                    <div class="text-white space-y-8">
+                        <h1 class="text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight tracking-wider">
+                            工商登記及<span class="text-gold">財稅服務</span>
+                        </h1>
+                        <p class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-lg font-light">
+                            仁川記帳及報稅代理人事務所與仁川事業有限公司，深耕業界三十餘年，服務範圍涵蓋工商登記、工廠登記、記帳報稅與勞健保相關作業等事項，協助企業與商家在經營過程中更安心、更有效率。
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <div class="magnetic-wrap">
+                                <button onclick="navTo('contact')" class="magnetic bg-gold text-darker font-bold px-8 py-4 rounded-full hover:bg-white hover:text-gold transition-colors duration-300">
+                                    立即聯絡
+                                </button>
+                            </div>
+                            <div class="magnetic-wrap">
+                                <button onclick="navTo('services', 'business')" class="magnetic border border-white text-white font-medium px-8 py-4 rounded-full hover:bg-white/10 transition-colors duration-300">
+                                    查看服務
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block">
+                        <div class="bg-dark/60 backdrop-blur-md p-8 border border-white/10 beam-card dark-theme">
+                            <h3 class="text-gold font-bold text-xl mb-6 flex items-center gap-2 relative z-10">
+                                <iconify-icon icon="mdi:star-four-points"></iconify-icon> 服務內容涵蓋：
+                            </h3>
+                            <ul class="space-y-4 text-gray-200 relative z-10">
+                                <li class="flex items-start gap-3"><span class="text-gold mt-1">1.</span>工廠設立及變更登記</li>
+                                <li class="flex items-start gap-3"><span class="text-gold mt-1">2.</span>特定工廠申請與設廠規劃</li>
+                                <li class="flex items-start gap-3"><span class="text-gold mt-1">3.</span>公司／行號／商業設立及變更登記</li>
+                                <li class="flex items-start gap-3"><span class="text-gold mt-1">4.</span>各類所得扣繳、決清算與印花稅申報</li>
+                                <li class="flex items-start gap-3"><span class="text-gold mt-1">5.</span>會計帳務處理、營業稅與營所稅申報</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Services -->
+            <section class="py-24 bg-light relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">SERVICES</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2">三大服務主軸</h2>
+                        <p class="text-gray-500 mt-4 max-w-2xl mx-auto">首頁先帶您快速了解主要服務內容，詳細細項可進入完整服務項目頁查看。</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 工商 -->
+                        <div class="beam-card p-8 flex flex-col h-full cursor-pointer" onclick="navTo('services', 'business')">
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 text-gold text-3xl">
+                                    <iconify-icon icon="mdi:domain"></iconify-icon>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">工商登記服務</h3>
+                                <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">協助公司、行號及商業單位辦理設立、變更、停復業、解散清算及各類相關申辦。</p>
+                                <ul class="text-sm text-gray-500 space-y-2 mb-8 border-l-2 border-gold/30 pl-3">
+                                    <li>公司／行號設立登記</li>
+                                    <li>各類變更登記</li>
+                                    <li>停業、歇業、解散登記</li>
+                                    <li>創業開業顧問服務</li>
+                                </ul>
+                                <div class="mt-auto flex items-center text-gold font-bold text-sm group">
+                                    點此進入 <iconify-icon icon="mdi:arrow-right" class="ml-2 transform group-hover:translate-x-2 transition"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 工廠 -->
+                        <div class="beam-card p-8 flex flex-col h-full cursor-pointer" onclick="navTo('services', 'factory')">
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 text-gold text-3xl">
+                                    <iconify-icon icon="mdi:factory"></iconify-icon>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">工廠登記服務</h3>
+                                <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">提供工廠設立、變更、特定工廠申請、特殊產業設廠及特殊區域進駐規劃等協助。</p>
+                                <ul class="text-sm text-gray-500 space-y-2 mb-8 border-l-2 border-gold/30 pl-3">
+                                    <li>工廠設立與變更登記</li>
+                                    <li>特定工廠申請輔導</li>
+                                    <li>特殊產業設廠服務</li>
+                                    <li>設廠規劃顧問</li>
+                                </ul>
+                                <div class="mt-auto flex items-center text-gold font-bold text-sm group">
+                                    點此進入 <iconify-icon icon="mdi:arrow-right" class="ml-2 transform group-hover:translate-x-2 transition"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 財稅 -->
+                        <div class="beam-card p-8 flex flex-col h-full cursor-pointer" onclick="navTo('services', 'tax')">
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 text-gold text-3xl">
+                                    <iconify-icon icon="mdi:calculator-variant"></iconify-icon>
+                                </div>
+                                <h3 class="text-xl font-bold text-dark mb-4">記帳報稅服務</h3>
+                                <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">協助企業處理日常帳務、各類稅務申報、薪資勞健保與國稅局往來事項。</p>
+                                <ul class="text-sm text-gray-500 space-y-2 mb-8 border-l-2 border-gold/30 pl-3">
+                                    <li>會計帳務處理</li>
+                                    <li>營業稅與營所稅申報</li>
+                                    <li>各類所得扣繳申報</li>
+                                    <li>薪資與勞健保作業</li>
+                                </ul>
+                                <div class="mt-auto flex items-center text-gold font-bold text-sm group">
+                                    點此進入 <iconify-icon icon="mdi:arrow-right" class="ml-2 transform group-hover:translate-x-2 transition"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Features (黑底) -->
+            <section id="home-features" class="py-24 bg-dark border-y border-gray-800 scroll-mt-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="text-gold font-bold tracking-widest text-sm uppercase">FEATURES</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">專業優勢</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mb-16">用長期累積的經驗，為不同規模、不同產業型態的客戶提供穩定支援。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">10+</div>
+                                <p class="text-gray-400 text-sm">十多位專業人才組成的團隊，提供分工明確的服務支援</p>
+                            </div>
+                        </div>
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">30+</div>
+                                <p class="text-gray-400 text-sm">三十餘年實務經驗，熟悉企業各階段常見需求與各類申報流程</p>
+                            </div>
+                        </div>
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">全台</div>
+                                <p class="text-gray-400 text-sm">客戶群遍及台灣各地，涵蓋電子、製造、商行、餐飲、服務、教育等多元產業</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="magnetic-wrap">
+                        <button onclick="navTo('about')" class="magnetic border-2 border-white text-white font-bold px-10 py-3 rounded-full hover:bg-white hover:text-dark transition-all duration-300">
+                            事務所介紹
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. FAQ (首頁段落) -->
+            <section id="home-faq" class="py-24 bg-light border-b border-gray-100 scroll-mt-20">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">FAQ</span>
+                        <h2 class="text-3xl font-bold text-dark mt-2 mb-4">常見問題</h2>
+                        <p class="text-gray-500">以下整理客戶常見的初步問題，方便快速了解服務方向。</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">新設公司或行號，可以協助辦到好嗎？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可以。我們可依實際需求協助辦理公司、分公司、行號設立登記，並進一步處理後續相關變更、勞健保單位設立與基礎行政事項。
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">沒有內部會計人員，也可以委託記帳報稅嗎？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可以。許多中小企業、商行、餐廳與補習班等客戶，皆可透過委外方式處理日常帳務、營業稅、年度申報與扣繳作業，以降低行政負擔並提升作業穩定度。
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">第一次洽詢前需要準備哪些資料？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可先準備公司或商號基本資料、目前欲辦理事項、是否已有帳務資料、是否有員工與薪資作業需求等資訊，便於更快速評估與安排服務方向。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 聯絡我們 (首頁段落) -->
+            <section id="home-contact" class="py-24 bg-white scroll-mt-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">CONTACT</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">聯絡我們</h2>
+                        <p class="text-gray-500 max-w-2xl mx-auto">歡迎來電或透過電子郵件與我們聯繫，將由專人為您提供協助。</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        <div class="space-y-8">
+                            <!-- 新增名片上方的大 Logo -->
+                            <div class="flex justify-center">
+                                <img src="logo800x800.png" alt="仁川事務所Logo" class="w-48 sm:w-56 md:w-64 h-auto object-contain drop-shadow-lg" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <div class="beam-card rounded-xl overflow-hidden shadow-2xl relative bg-white flex items-center justify-center">
+                                <img src="card.png" alt="名片" class="w-full h-auto rounded-lg relative z-10" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- 取消 beam-card 避免被覆蓋背景顏色 -->
+                                <a href="https://www.facebook.com/p/%E4%BB%81%E5%B7%9D%E8%A8%98%E5%B8%B3%E5%8F%8A%E5%A0%B1%E7%A8%85%E4%BB%A3%E7%90%86%E4%BA%BA%E4%BA%8B%E5%8B%99%E6%89%80-100068639212441/" target="_blank" class="magnetic bg-[#1877F2] flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="mdi:facebook" class="text-2xl mr-2"></iconify-icon> Facebook</div>
+                                </a>
+                                <a href="https://line.me/ti/p/BMWjcyQfnu" target="_blank" class="magnetic bg-[#06C755] flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="fa-brands:line" class="text-2xl mr-2"></iconify-icon> LINE</div>
+                                </a>
+                                <a href="https://www.google.com/maps/place/510%E5%BD%B0%E5%8C%96%E7%B8%A3%E5%93%A1%E6%9E%97%E5%B8%82%E5%BB%BA%E5%9C%8B%E8%B7%AF142%E8%99%9F/" target="_blank" class="magnetic bg-gray-800 flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="mdi:google-maps" class="text-2xl mr-2"></iconify-icon> Google 地圖</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-center">
+                            <div class="bg-light p-10 rounded-2xl beam-card">
+                                <div class="relative z-10">
+                                    <h3 class="text-2xl font-bold text-dark mb-6 border-l-4 border-gold pl-4">聯絡資訊</h3>
+                                    <ul class="space-y-6 text-gray-700">
+                                        <li class="flex items-start">
+                                            <iconify-icon icon="mdi:office-building" class="text-gold text-2xl mr-4 mt-1"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">事務所 / 公司名稱</p>
+                                                <p class="text-sm text-gray-500">仁川記帳及報稅代理人事務所<br>仁川事業有限公司</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:phone" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">電話</p>
+                                                <p class="text-sm text-gray-500">04-8333741</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:printer" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">傳真</p>
+                                                <p class="text-sm text-gray-500">04-8370831</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:email" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">Email</p>
+                                                <a href="mailto:chaochia@ms1.hinet.net" class="text-sm text-gold hover:underline">chaochia@ms1.hinet.net</a>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <iconify-icon icon="mdi:map-marker" class="text-gold text-2xl mr-4 mt-1"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">地址</p>
+                                                <p class="text-sm text-gray-500">510 彰化縣員林市建國路142號</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <!-- 新增負責人資訊 -->
+                                    <div class="mt-8 pt-8 border-t border-gray-200">
+                                        <h3 class="text-2xl font-bold text-dark mb-6 border-l-4 border-gold pl-4">負責人資訊</h3>
+                                        <ul class="space-y-6 text-gray-700">
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="mdi:account" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">負責人</p>
+                                                    <p class="text-sm text-gray-500">江莉莉</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="mdi:cellphone" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">手機</p>
+                                                    <p class="text-sm text-gray-500">0919-834441</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="fa-brands:line" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">LINE ID</p>
+                                                    <p class="text-sm text-gray-500">8374441</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== ABOUT VIEW (事務所介紹) ==================== -->
+        <div id="view-about" class="view-section">
+            <section class="bg-dark text-white py-24 bg-[url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center bg-blend-overlay">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-10">
+                    <span class="text-gold font-bold tracking-widest text-sm uppercase">ABOUT US</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6">事務所介紹</h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">專注於工商登記、工廠登記、記帳報稅及財稅申報服務，提供穩定、專業且值得信賴的協助。</p>
+                    <p class="text-gray-400 mt-2">從在地服務出發，逐步累積跨產業經驗，持續以專業的態度服務客戶。</p>
+                </div>
+            </section>
+
+            <section class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-dark mb-6 border-l-4 border-gold pl-4">三十餘年專業經驗，<br>服務遍及全台</h2>
+                        <p class="text-gray-600 leading-loose text-justify">
+                            我們的團隊已走過三十幾年的歷程，從最初的兩人團隊，成長為目前擁有十多位專業人才的服務團隊。業務主要分為記帳與工商兩大部門，累積了豐富的稅務經驗與深厚的工商、工廠登記變更實務，能依不同客戶型態提供所需的協助。客戶群遍布台灣各地，服務對象橫跨電子大廠、酒廠、製造業、餐飲業、補習班等多元產業。
+                        </p>
+                    </div>
+                    <div class="beam-card dark-theme p-10 bg-dark">
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-gold mb-8 flex items-center gap-2">
+                                <iconify-icon icon="mdi:bullseye-arrow"></iconify-icon> 服務重點與理念
+                            </h3>
+                            <ul class="space-y-6 text-gray-300">
+                                <li class="flex gap-4">
+                                    <iconify-icon icon="mdi:check-circle" class="text-gold text-2xl flex-shrink-0 mt-1"></iconify-icon>
+                                    <span class="leading-relaxed">工商、工廠、記帳報稅整合服務</span>
+                                </li>
+                                <li class="flex gap-4">
+                                    <iconify-icon icon="mdi:check-circle" class="text-gold text-2xl flex-shrink-0 mt-1"></iconify-icon>
+                                    <span class="leading-relaxed">提供清楚、效率且穩健的專業協助</span>
+                                </li>
+                                <li class="flex gap-4">
+                                    <iconify-icon icon="mdi:check-circle" class="text-gold text-2xl flex-shrink-0 mt-1"></iconify-icon>
+                                    <span class="leading-relaxed">熟悉各類型企業與商家需求，服務產業範圍廣泛</span>
+                                </li>
+                                <li class="flex gap-4">
+                                    <iconify-icon icon="mdi:check-circle" class="text-gold text-2xl flex-shrink-0 mt-1"></iconify-icon>
+                                    <span class="leading-relaxed">兼顧法規、時效與實務操作，協助客戶降低行政負擔</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 事務所介紹：新增專業優勢(黑底) -->
+            <section id="about-features" class="py-24 bg-dark border-y border-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="text-gold font-bold tracking-widest text-sm uppercase">FEATURES</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">專業優勢</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mb-16">用長期累積的經驗，為不同規模、不同產業型態的客戶提供穩定支援。</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">10+</div>
+                                <p class="text-gray-400 text-sm">十多位專業人才組成的團隊，提供分工明確的服務支援</p>
+                            </div>
+                        </div>
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">30+</div>
+                                <p class="text-gray-400 text-sm">三十餘年實務經驗，熟悉企業各階段常見需求與各類申報流程</p>
+                            </div>
+                        </div>
+                        <div class="beam-card dark-theme p-8 flex flex-col items-center text-center">
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="text-5xl font-black text-gold mb-4">全台</div>
+                                <p class="text-gray-400 text-sm">客戶群遍及台灣各地，涵蓋電子、製造、商行、餐飲、服務、教育等多元產業</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24 bg-darker text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <span class="text-gold font-bold tracking-widest text-sm uppercase">WHY CHOOSE US</span>
+                            <h2 class="text-3xl font-bold mt-2 mb-6">客戶的選擇</h2>
+                            <p class="text-gray-300 leading-loose text-justify">
+                                我們深知企業在設立、營運與成長過程中，常面臨繁瑣的登記、帳務與稅務問題。本事務所提供工商登記、工廠登記、記帳報稅及財稅申報等整合服務，以專業、效率與細緻的作業方式，協助客戶減少行政負擔、降低申辦錯誤風險，讓您更安心專注於本業發展。
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- 互動區塊 -->
+                            <div class="group relative bg-dark border border-gray-800 rounded-xl p-8 hover:border-gold transition-colors duration-300 cursor-pointer overflow-hidden beam-card dark-theme">
+                                <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <div class="relative z-10 text-center">
+                                    <h3 class="text-xl font-bold mb-6 text-white group-hover:text-gold transition-colors">服務項目一覽</h3>
+                                    <p class="text-gray-400 text-sm mb-6">游標移至此處探索整合服務</p>
+                                    <div class="flex justify-center gap-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                        <button onclick="navTo('services', 'business')" class="bg-white/10 hover:bg-gold hover:text-dark text-white px-4 py-2 rounded-md text-sm transition">工商服務</button>
+                                        <button onclick="navTo('services', 'factory')" class="bg-white/10 hover:bg-gold hover:text-dark text-white px-4 py-2 rounded-md text-sm transition">工廠服務</button>
+                                        <button onclick="navTo('services', 'tax')" class="bg-white/10 hover:bg-gold hover:text-dark text-white px-4 py-2 rounded-md text-sm transition">財稅服務</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== SERVICES VIEW (服務項目：工商/工廠/財稅 共用視圖) ==================== -->
+        <div id="view-services" class="view-section">
+            <section class="bg-dark text-white pt-24 pb-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gold">我們的服務項目</h1>
+                    <p class="text-gray-400 mt-4">請選擇或懸停下方服務分類查看細節</p>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+                    <div class="service-trigger beam-card dark-theme bg-darker p-6 text-center cursor-pointer relative z-20" onclick="renderService('business')">
+                        <div class="relative z-10">
+                            <iconify-icon icon="mdi:domain" class="text-4xl text-gold mb-3"></iconify-icon>
+                            <h3 class="text-xl font-bold">工商服務</h3>
+                        </div>
+                        <div class="service-dropdown-content absolute top-full left-0 w-full mt-4 bg-white text-dark p-6 rounded-xl shadow-2xl text-left border border-gold/20 z-50">
+                            <ul class="space-y-2 text-sm">
+                                <li class="font-medium text-gold border-b pb-2 mb-2">服務大綱</li>
+                                <li>1. 公司／商業設立登記</li>
+                                <li>2. 各類變更登記</li>
+                                <li>3. 停業、復業、歇業、解散登記</li>
+                                <li>4. 特許及相關申辦協助</li>
+                                <li>5. 創業開業顧問服務</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-trigger beam-card dark-theme bg-darker p-6 text-center cursor-pointer relative z-20" onclick="renderService('factory')">
+                        <div class="relative z-10">
+                            <iconify-icon icon="mdi:factory" class="text-4xl text-gold mb-3"></iconify-icon>
+                            <h3 class="text-xl font-bold">工廠服務</h3>
+                        </div>
+                        <div class="service-dropdown-content absolute top-full left-0 w-full mt-4 bg-white text-dark p-6 rounded-xl shadow-2xl text-left border border-gold/20 z-50">
+                            <ul class="space-y-2 text-sm">
+                                <li class="font-medium text-gold border-b pb-2 mb-2">服務大綱</li>
+                                <li>1. 工廠設立登記</li>
+                                <li>2. 工廠變更登記</li>
+                                <li>3. 工廠歇業、註銷及廢止</li>
+                                <li>4. 特定工廠及相關輔導</li>
+                                <li>5. 特殊產業設廠服務</li>
+                                <li>6. 特殊區域設廠服務</li>
+                                <li>7. 設廠規劃顧問</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-trigger beam-card dark-theme bg-darker p-6 text-center cursor-pointer relative z-20" onclick="renderService('tax')">
+                        <div class="relative z-10">
+                            <iconify-icon icon="mdi:calculator-variant" class="text-4xl text-gold mb-3"></iconify-icon>
+                            <h3 class="text-xl font-bold">財稅服務</h3>
+                        </div>
+                        <div class="service-dropdown-content absolute top-full left-0 w-full mt-4 bg-white text-dark p-6 rounded-xl shadow-2xl text-left border border-gold/20 z-50">
+                            <ul class="space-y-2 text-sm">
+                                <li class="font-medium text-gold border-b pb-2 mb-2">服務大綱</li>
+                                <li>1. 日常帳務處理</li>
+                                <li>2. 營業稅申報</li>
+                                <li>3. 營利事業所得稅申報</li>
+                                <li>4. 各類所得扣繳申報</li>
+                                <li>5. 薪資與勞健保相關作業</li>
+                                <li>6. 個人綜合所得稅申報</li>
+                                <li>7. 稅務諮詢與往來協助</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24 bg-light relative z-0 min-h-[50vh]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div id="service-content-container" class="opacity-0 transform translate-y-4 transition-all duration-500">
+                        <!-- 動態內容注入點 -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== CONTACT VIEW (聯絡我們獨立頁面) ==================== -->
+        <div id="view-contact" class="view-section">
+            <section class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">CONTACT</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">聯絡我們</h2>
+                        <p class="text-gray-500 max-w-2xl mx-auto">歡迎來電、LINE 或透過 EMAIL 與我們聯繫，將由專人為您提供協助。</p>
+                    </div>
+
+                    <!-- 聯絡區塊 分左右 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+                        <!-- 左：名片圖像與按鈕 -->
+                        <div class="space-y-8">
+                            <!-- 新增名片上方的大 Logo -->
+                            <div class="flex justify-center">
+                                <img src="logo800x800.png" alt="仁川事務所Logo" class="w-48 sm:w-56 md:w-64 h-auto object-contain drop-shadow-lg" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <div class="beam-card rounded-xl overflow-hidden shadow-2xl relative bg-white flex items-center justify-center">
+                                <img src="card.png" alt="名片" class="w-full h-auto rounded-lg relative z-10" onerror="this.style.display='none'">
+                            </div>
+                            
+                            <!-- 社群按鈕 -->
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- 移除 beam-card 避免蓋掉顏色 -->
+                                <a href="https://www.facebook.com/p/%E4%BB%81%E5%B7%9D%E8%A8%98%E5%B8%B3%E5%8F%8A%E5%A0%B1%E7%A8%85%E4%BB%A3%E7%90%86%E4%BA%BA%E4%BA%8B%E5%8B%99%E6%89%80-100068639212441/" target="_blank" class="magnetic bg-[#1877F2] flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="mdi:facebook" class="text-2xl mr-2"></iconify-icon> Facebook</div>
+                                </a>
+                                <a href="https://line.me/ti/p/BMWjcyQfnu" target="_blank" class="magnetic bg-[#06C755] flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="fa-brands:line" class="text-2xl mr-2"></iconify-icon> LINE</div>
+                                </a>
+                                <a href="https://www.google.com/maps/place/510%E5%BD%B0%E5%8C%96%E7%B8%A3%E5%93%A1%E6%9E%97%E5%B8%82%E5%BB%BA%E5%9C%8B%E8%B7%AF142%E8%99%9F/" target="_blank" class="magnetic bg-gray-800 flex justify-center items-center py-4 rounded-xl transition hover:scale-105 shadow-md">
+                                    <div class="flex items-center text-white font-bold"><iconify-icon icon="mdi:google-maps" class="text-2xl mr-2"></iconify-icon> Google 地圖</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 右：聯絡資訊 -->
+                        <div class="flex flex-col justify-center">
+                            <div class="bg-light p-10 rounded-2xl beam-card">
+                                <div class="relative z-10">
+                                    <h3 class="text-2xl font-bold text-dark mb-6 border-l-4 border-gold pl-4">聯絡資訊</h3>
+                                    <ul class="space-y-6 text-gray-700">
+                                        <li class="flex items-start">
+                                            <iconify-icon icon="mdi:office-building" class="text-gold text-2xl mr-4 mt-1"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">事務所 / 公司名稱</p>
+                                                <p class="text-sm text-gray-500">仁川記帳及報稅代理人事務所<br>仁川事業有限公司</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:phone" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">電話</p>
+                                                <p class="text-sm text-gray-500">04-8333741</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:printer" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">傳真</p>
+                                                <p class="text-sm text-gray-500">04-8370831</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <iconify-icon icon="mdi:email" class="text-gold text-2xl mr-4"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">Email</p>
+                                                <a href="mailto:chaochia@ms1.hinet.net" class="text-sm text-gold hover:underline">chaochia@ms1.hinet.net</a>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <iconify-icon icon="mdi:map-marker" class="text-gold text-2xl mr-4 mt-1"></iconify-icon>
+                                            <div>
+                                                <p class="font-bold">地址</p>
+                                                <p class="text-sm text-gray-500">510 彰化縣員林市建國路142號</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <!-- 新增負責人資訊 -->
+                                    <div class="mt-8 pt-8 border-t border-gray-200">
+                                        <h3 class="text-2xl font-bold text-dark mb-6 border-l-4 border-gold pl-4">負責人資訊</h3>
+                                        <ul class="space-y-6 text-gray-700">
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="mdi:account" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">負責人</p>
+                                                    <p class="text-sm text-gray-500">江莉莉</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="mdi:cellphone" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">手機</p>
+                                                    <p class="text-sm text-gray-500">0919-834441</p>
+                                                </div>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <iconify-icon icon="fa-brands:line" class="text-gold text-2xl mr-4"></iconify-icon>
+                                                <div>
+                                                    <p class="font-bold">LINE ID</p>
+                                                    <p class="text-sm text-gray-500">8374441</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 常見問題 FAQ -->
+            <section class="py-24 bg-light border-t border-gray-100">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">FAQ</span>
+                        <h2 class="text-3xl font-bold text-dark mt-2 mb-4">常見問題</h2>
+                        <p class="text-gray-500">聯絡前可先參考以下整理常見的初步問題，方便訪客先了解服務方向。</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">新設公司或行號，可以協助辦到好嗎？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可以。我們可依實際需求協助辦理公司、分公司、行號設立登記，並進一步處理後續相關變更、勞健保單位設立與基礎行政事項。
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">沒有內部會計人員，也可以委託記帳報稅嗎？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可以。許多中小企業、商行、餐廳與補習班等客戶，皆可透過委外方式處理日常帳務、營業稅、年度申報與扣繳作業，以降低行政負擔並提升作業穩定度。
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden beam-card">
+                            <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none relative z-10" onclick="toggleFaq(this)">
+                                <span class="font-bold text-dark pr-4">第一次洽詢前需要準備哪些資料？</span>
+                                <iconify-icon icon="mdi:chevron-down" class="faq-icon text-gold text-2xl transition-transform duration-300 flex-shrink-0"></iconify-icon>
+                            </button>
+                            <div class="faq-answer px-6 bg-gray-50 text-gray-600 text-sm leading-relaxed relative z-10">
+                                可先準備公司或商號基本資料、目前欲辦理事項、是否已有帳務資料、是否有員工與薪資作業需求等資訊，便於更快速評估與安排服務方向。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 頁尾 Footer -->
+    <footer class="bg-darker text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <p class="text-sm text-gray-400">© 2026 仁川記帳及報稅代理人事務所 / 仁川事業有限公司</p>
+                <p class="text-xs text-gray-600 mt-1">All Rights Reserved.</p>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <a href="#about" onclick="navTo('about')" class="text-sm text-gray-400 hover:text-gold transition">事務所介紹</a>
+                <a href="#services" onclick="navTo('services', 'business')" class="text-sm text-gray-400 hover:text-gold transition">服務項目</a>
+                <a href="#contact" onclick="navTo('contact')" class="text-sm font-bold bg-gold text-dark px-4 py-2 rounded hover:bg-white transition">聯絡我們</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 邏輯：路由、內容資料庫、GSAP 磁吸互動 -->
+    <script>
+        // ==================== 內容資料庫 (服務項目細節) ====================
+        const servicesData = {
+            business: {
+                title: "工商登記服務",
+                desc: "協助新創、創業者及各類營業單位完成合法設立、變更、停復業及相關申辦事項。",
+                sections: [
+                    {
+                        sub: "1. 公司／商業設立登記",
+                        content: "協助新創、創業者及各類營業單位完成合法設立，包括：",
+                        list: ["公司、分公司設立登記", "行號／商業登記設立", "分店／營業所設立", "稅籍登記申請", "統一編號申請", "營業項目代碼規劃", "公司名稱預查申請", "資本額規劃與設立文件整理"]
+                    },
+                    {
+                        sub: "2. 各類變更登記",
+                        content: "公司設立後，如有資料異動，我們可代為辦理：",
+                        list: ["公司名稱變更", "負責人變更", "董事／監察人變更", "股東變更", "股權轉讓相關登記", "資本額增資／減資", "公司地址遷址變更", "營業項目變更", "組織章程修訂", "分公司資料變更", "商業負責人變更", "稅籍資料變更"]
+                    },
+                    {
+                        sub: "3. 停業、復業、歇業、解散登記",
+                        content: "當企業營運狀況有調整時，可協助辦理：",
+                        list: ["停業申請", "復業申請", "歇業登記", "公司解散登記", "清算相關申辦", "商業註銷登記", "稅籍註銷申請"]
+                    },
+                    {
+                        sub: "4. 特許及相關申辦協助",
+                        content: "依不同產業需求，協助準備申請文件與流程諮詢，例如：",
+                        list: ["進出口廠商登記", "勞健保投保單位成立申請", "勞退提繳單位申辦", "電子發票申請", "發票購票資格申請", "扣繳單位設立申請", "國稅局／地方政府相關資料申辦協助"]
+                    },
+                    {
+                        sub: "5. 創業開業顧問服務",
+                        content: "提供創業初期常見問題協助：",
+                        list: ["創業型態建議（公司／行號）", "營業登記與稅務規劃", "負責人身分與稅務影響說明", "發票使用規劃", "勞健保投保方式建議", "基本財稅制度說明"]
+                    }
+                ]
+            },
+            factory: {
+                title: "工廠登記服務",
+                desc: "針對工廠設立、營運異動及各類登記事項，提供文件整理、流程協助與申請輔導。",
+                sections: [
+                    {
+                        sub: "1. 工廠設立登記",
+                        content: "協助新設工廠完成相關申請作業，包括：",
+                        list: ["工廠設立登記申請", "產業類別及產品項目規劃", "廠地、廠房使用項目確認", "工廠登記申請文件整理", "基本資料表單填報協助", "與主管機關申辦流程說明"]
+                    },
+                    {
+                        sub: "2. 工廠變更登記",
+                        content: "工廠營運後，如有異動，可協助辦理：",
+                        list: ["工廠名稱變更", "工廠負責人變更", "工廠地址變更", "廠地、廠房面積變更", "主要產品項目變更", "產業類別變更", "增設機器設備相關資料變更", "工廠組織或公司資料連動變更", "停工、復工相關申報協助"]
+                    },
+                    {
+                        sub: "3. 工廠歇業、註銷及廢止相關申辦",
+                        content: "當工廠停止營運或需辦理結束作業時，可協助：",
+                        list: ["工廠歇業申請", "工廠註銷登記", "停止生產相關資料申報", "配合主管機關之補正及文件整理"]
+                    },
+                    {
+                        sub: "4. 特定工廠及相關輔導",
+                        content: "依個案需求提供申請協助與諮詢：",
+                        list: ["特定工廠登記相關文件協助", "未登記工廠改善及申請方向建議", "配合土地、建物使用及主管機關需求之文件準備", "各類工廠申請前期文件整理與流程說明"]
+                    },
+                    {
+                        sub: "5. 特殊產業設廠服務",
+                        content: "針對具專業法規或許可需求之產業，提供設廠規劃與申請輔導：",
+                        list: ["酒廠設立申辦", "化粧品工廠設立申辦", "肥料工廠設立申辦", "食品工廠設立申辦", "特殊產業設廠文件整合與流程輔導"]
+                    },
+                    {
+                        sub: "6. 特殊區域設廠服務",
+                        content: "針對不同產業區位與主管機關要求，協助進行整體設廠規劃：",
+                        list: ["科學園區設廠規劃", "產業園區設廠規劃", "工業區設廠評估", "土地與建物使用整合分析", "進駐申請與主管機關文件協助"]
+                    },
+                    {
+                        sub: "7. 設廠規劃顧問",
+                        content: "針對企業設廠前期需求，提供整體規劃與申辦建議：",
+                        list: ["設廠可行性評估", "廠地選址建議", "廠房用途與申請規劃", "工廠登記與相關許可整合", "設廠流程與時程規劃"]
+                    }
+                ]
+            },
+            tax: {
+                title: "財稅服務",
+                desc: "專業的稅務申報與帳務處理，降低企業行政負擔，穩定營運體質。",
+                sections: [
+                    {
+                        sub: "1. 日常帳務處理",
+                        content: "協助企業建立完整帳務資料，減少自行處理的負擔：",
+                        list: ["憑證整理與登帳", "帳冊編製", "收入、成本、費用帳務處理", "應收／應付款資料整理", "銀行往來資料整理", "每月帳務記錄", "會計資料建檔與保管", "財務資料整理分析"]
+                    },
+                    {
+                        sub: "2. 營業稅申報",
+                        content: "營業人常見的稅務申報服務：",
+                        list: ["雙月營業稅申報", "零稅率申報", "免稅／應稅銷售額整理", "進項與銷項稅額整理", "發票資料彙整", "電子發票帳務配合", "營業稅申報異常協助說明"]
+                    },
+                    {
+                        sub: "3. 營利事業所得稅申報",
+                        content: "公司行號年度重要申報事項：",
+                        list: ["營利事業所得稅結算申報", "暫繳申報", "未分配盈餘申報", "扣繳憑單資料整理", "結算申報書編製", "帳簿憑證配合整理", "稅務申報文件準備"]
+                    },
+                    {
+                        sub: "4. 各類所得扣繳申報",
+                        content: "公司支付薪資、租金、執行業務報酬等，常需辦理：",
+                        list: ["薪資所得扣繳申報", "租金扣繳申報", "執行業務所得扣繳申報", "各類所得憑單申報", "年度扣繳憑單申報", "二代健保補充保費資料整理"]
+                    },
+                    {
+                        sub: "5. 薪資與勞健保相關作業",
+                        content: "針對雇主常見行政需求，可協助：",
+                        list: ["員工薪資計算", "薪資單編製", "勞保投保／退保", "健保投保／退保", "勞退提繳申報", "員工加保異動作業", "投保薪資調整"]
+                    },
+                    {
+                        sub: "6. 個人綜合所得稅申報",
+                        content: "除公司行號外，也可協助個人辦理：",
+                        list: ["個人綜合所得稅申報", "執行業務者所得申報", "租賃所得整理", "股利所得整理", "所得扣除額整理", "節稅資料檢視與建議"]
+                    },
+                    {
+                        sub: "7. 稅務諮詢與國稅局往來協助",
+                        content: "協助客戶處理各類財稅問題：",
+                        list: ["稅務問題諮詢", "國稅局來函協助處理", "補件資料整理", "稅務申報疑義說明", "帳務與稅務流程建議", "財稅制度基本規劃"]
+                    }
+                ]
+            }
+        };
+
+        // ==================== 路由與導覽控制 ====================
+        function navTo(viewId, subParam = null) {
+            // 隱藏所有視圖
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            if(viewId === 'services' && subParam) {
+                renderService(subParam);
+            } else if (viewId === 'services') {
+                renderService('business');
+            }
+
+            // 顯示目標視圖
+            const targetView = document.getElementById('view-' + viewId);
+            if(targetView) {
+                targetView.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // 關閉手機選單
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        }
+
+        // 頁面內滾動導覽 (給首頁的特定區塊使用)
+        function scrollToSection(id) {
+            navTo('home'); // 確保在首頁
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if(el) {
+                    const y = el.getBoundingClientRect().top + window.scrollY - 80; // -80px 為了避開 fixed navbar
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                }
+            }, 50); // 微幅延遲確保 DOM 切換完畢
+        }
+
+        // ==================== 動態渲染服務項目 ====================
+        function renderService(type) {
+            const data = servicesData[type];
+            if(!data) return;
+
+            const container = document.getElementById('service-content-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                let html = `
+                    <div class="mb-12">
+                        <span class="text-gold font-bold tracking-widest text-sm uppercase">OVERVIEW</span>
+                        <h2 class="text-3xl font-bold text-dark mt-2 mb-4">${data.title}內容</h2>
+                        <p class="text-gray-600 max-w-3xl">${data.desc}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                `;
+
+                data.sections.forEach(sec => {
+                    let listItems = sec.list.map(item => `<li class="flex gap-2"><iconify-icon icon="mdi:circle-small" class="text-gold text-xl"></iconify-icon> <span class="mt-0.5">${item}</span></li>`).join('');
+                    html += `
+                        <div class="beam-card p-8 bg-white border border-gray-50 h-full">
+                            <div class="relative z-10">
+                                <h3 class="text-lg font-bold text-dark mb-3 border-l-4 border-gold pl-3">${sec.sub}</h3>
+                                <p class="text-sm text-gray-500 mb-4">${sec.content}</p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    ${listItems}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+                container.innerHTML = html;
+                
+                requestAnimationFrame(() => {
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        }
+
+        // ==================== UI 互動控制 ====================
+        
+        // 手機版選單切換
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // FAQ 手風琴切換
+        function toggleFaq(btn) {
+            const currentItem = btn.closest('.faq-item');
+            const isActive = currentItem.classList.contains('active');
+            
+            // 由於同一頁可能有多個 FAQ 區塊 (home / contact) ，我們只收合當前父容器內的項目
+            const container = btn.closest('.space-y-4');
+            container.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            
+            if (!isActive) {
+                currentItem.classList.add('active');
+            }
+        }
+
+        // ==================== GSAP 動畫 ====================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 磁吸按鈕效果 (Magnetic Pull)
+        function initMagneticButtons() {
+            const magneticElements = document.querySelectorAll('.magnetic');
+            
+            magneticElements.forEach(elem => {
+                const wrap = elem.closest('.magnetic-wrap') || elem;
+                
+                wrap.addEventListener('mousemove', (e) => {
+                    const rect = wrap.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    gsap.to(elem, {
+                        x: x * 0.3,
+                        y: y * 0.3,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                wrap.addEventListener('mouseleave', () => {
+                    gsap.to(elem, {
+                        x: 0,
+                        y: 0,
+                        duration: 0.7,
+                        ease: 'elastic.out(1, 0.3)'
+                    });
+                });
+            });
+        }
+
+        // 初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            initMagneticButtons();
+            renderService('business');
+        });
+
+    </script>
 </body>
 </html>
